@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>SVG Viewer | Braiden Gole</title>
+
+        <!-- Bulma & Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="viewer.css">
+    </head>
+    <body class="theme-dark">
+        <header class="viewer-header">
+            <div class="is-flex is-align-items-center" style="overflow: hidden; min-width: 0;">
+                <span class="icon has-text-primary mr-2 is-hidden-mobile"><i class="fas fa-sitemap"></i></span>
+                <h1 id="diagram-title" class="title is-6-mobile is-5-tablet mb-0 mono" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Loading Diagram...</h1>
+            </div>
+            
+            <div class="is-flex is-align-items-center ml-2" style="flex-shrink: 0;">
+                <a href="index.html" class="button is-small mono back-btn">
+                    <span class="icon"><i class="fas fa-arrow-left"></i></span>
+                    <span>Back</span>
+                </a>
+            </div>
+        </header>
+
+        <div class="canvas-container" id="svg-viewport">
+            <div class="svg-content" id="svg-content"></div>
+            
+            <div class="controls-toolbar">
+                <button class="button is-small" id="zoom-in-btn" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+                <button class="button is-small" id="zoom-out-btn" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+                <button class="button is-small" id="reset-zoom-btn" title="Reset Zoom"><i class="fas fa-redo"></i></button>
+            </div>
+        </div>
+
+        <!-- Custom JS -->
+        <script src="viewer.js"></script>
+    </body>
+</html>
