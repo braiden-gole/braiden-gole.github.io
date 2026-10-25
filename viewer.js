@@ -179,7 +179,11 @@ class DiagramViewer {
         if (backButton) {
             backButton.addEventListener('click', (event) => {
                 event.preventDefault()
-                window.location.href = 'index.html#diagrams'
+                
+                const urlParameters = new URLSearchParams(window.location.search)
+                const targetSelection = urlParameters.get("from") || "diagrams"
+
+                window.location.href = `index.html#${targetSelection}`
             })
         }
 

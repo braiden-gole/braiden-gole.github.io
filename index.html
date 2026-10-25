@@ -32,7 +32,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/github-dark.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/github-dark.min.css">
 
         <link rel="stylesheet" href="main.css">
     </head>
@@ -81,7 +81,7 @@
                                     title="braiden.gole@gmail.com">
                                     <span class="icon has-text-info mr-2 is-flex-shrink-0"><i
                                             class="fas fa-envelope"></i></span>
-                                    <span class="is-truncated mono is-size-7">braiden,gole@gmail.com</span>
+                                    <span class="is-truncated mono is-size-7">braiden.gole@gmail.com</span>
                                 </a>
 
                                 <a href="tel:+15197416963"
@@ -149,6 +149,10 @@
                             <a href="#diagrams" class="button is-success is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
                                 <span class="icon"><i class="fas fa-sitemap"></i></span>
                                 <span>Diagrams</span>
+                            </a>
+                            <a href="#networking" class="button is-link is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
+                                <span class="icon"><i class="fas fa-network-wired"></i></span>
+                                <span>Networking & Subnetting</span>
                             </a>
                         </div>
                     </div>
@@ -2055,6 +2059,484 @@
                                         <span class="icon"><i class="fas fa-external-link-alt"></i></span>
                                         <span>View Diagram</span>
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Networking & Subnetting Section (Matched to button color: #3273dc / is-link) -->
+                    <div id="networking" style="scroll-margin-top: 2rem;"></div>
+
+                    <article class="modern-tile grid-full-width networking-tile">
+                        <div class="is-flex is-justify-content-space-between is-align-items-center border-bottom-small pb-3 mb-4 flex-wrap">
+                            <h3 class="title is-3 has-text-link mb-0" style="color: #3273dc !important; text-shadow: 0 0 10px rgba(50, 115, 220, 0.4);">
+                                <span class="icon mx-4"><i class="fas fa-network-wired"></i></span>Networking
+                            </h3>
+                        </div>
+
+                        <p class="is-size-6">Subnet Calculationss</p>
+
+                        <hr>
+
+                        <p class="is-size-6 mb-5 networking-desc">
+                            Demonstrating comprehensive mastery of network architecture: OSI/TCP-IP encapsulation layers, TCP connection state lifecycles, IPv4/IPv6 addressing, CIDR subnetting, gateway configurations, and advanced multi-octet block calculations.
+                        </p>
+
+                        <!-- 1. Macro Architecture: Architectural Packet Routing Viewer Link Card -->
+                        <div class="box bg-deep border-accent p-4 mb-5" style="border-left: 3px solid #3273dc;">
+                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// PACKET_ROUTING_ENGINE</p>
+                            <div class="is-flex is-flex-direction-column" style="gap: 1rem;">
+                                <p class="is-size-6 mb-0">
+                                    Visualizing host-level decision engines, bitwise AND subnet matching, local ARP resolution, and Default Gateway routing paths.
+                                </p>
+                                <div class="is-flex is-justify-content-flex-end">
+                                    <a href="viewer.html?src=images/networking-packet-routing.svg&title=Packet%20Routing%20Architecture&from=networking" target="_blank" rel="noopener noreferrer" class="button is-link is-small">
+                                        <span>View Diagram</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Network Stack Theory: OSI & TCP/IP Layers Architecture Reference -->
+                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5" style="border-left: 3px solid #3273dc;">
+                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// (OSI & TCP/IP MODELS)</p>
+                            <div class="table-container">
+                                <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
+                                    <thead>
+                                        <tr class="has-text-link" style="color: #3273dc !important;">
+                                            <th>OSI Layer</th>
+                                            <th>TCP/IP Layer</th>
+                                            <th>Core Protocols & Services</th>
+                                            <th>Data Unit (PDU)</th>
+                                            <th>Systems Function / Role</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>7. Application</strong></td>
+                                            <td rowspan="3"><strong>Application</strong></td>
+                                            <td>HTTP/S, DNS, DHCP, SSH, FTP, SMTP</td>
+                                            <td>Data</td>
+                                            <td>User-facing protocols, resource querying, and session data representation.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>6. Presentation</strong></td>
+                                            <td>TLS / SSL, JPEG, ASCII, Encryption</td>
+                                            <td>Data</td>
+                                            <td>Data formatting, cryptographic compression, and syntax translation.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>5. Session</strong></td>
+                                            <td>NetBIOS, RPC, Sockets API</td>
+                                            <td>Data</td>
+                                            <td>Interhost communication management and connection state checkpoints.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>4. Transport</strong></td>
+                                            <td><strong>Transport</strong></td>
+                                            <td><strong>TCP</strong> (Reliable, Stream), <strong>UDP</strong> (Fast, Datagram)</td>
+                                            <td>Segment (TCP) / Datagram (UDP)</td>
+                                            <td>End-to-end flow control, error recovery, port multiplexing, and sequencing.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>3. Network</strong></td>
+                                            <td><strong>Internet</strong></td>
+                                            <td>IPv4, IPv6, ICMP, IPsec, OSPF, BGP</td>
+                                            <td>Packet / Datagram</td>
+                                            <td>Logical addressing, packet routing across routers, and path determination.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>2. Data Link</strong></td>
+                                            <td rowspan="2"><strong>Network Access / Link</strong></td>
+                                            <td>Ethernet, ARP, PPP, MAC Addressing</td>
+                                            <td>Frame</td>
+                                            <td>Node-to-node physical transmission and MAC error detection.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>1. Physical</strong></td>
+                                            <td>Cables, Hubs, NICs, Radio Waves (RF)</td>
+                                            <td>Bits</td>
+                                            <td>Raw binary bit stream conversion into electrical or optical signals.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 3. Protocol Mechanics: TCP State Lifecycle & Handshake -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
+                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// TCP_CONNECTION_LIFECYCLE</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text">
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-info fw-bold">TCP 3-Way Handshake (Connection Setup):</span>
+                                        <ul class="pl-3 mt-2" style="list-style: disc; line-height: 1.6;">
+                                            <li><strong>1. SYN:</strong> Client sends packet with <code>SYN</code> flag and initial sequence number ($ISN_c$). State: `SYN_SENT`.</li>
+                                            <li><strong>2. SYN-ACK:</strong> Server acknowledges with its own <code>SYN</code> and <code>ACK ($ISN_c + 1$)</code>. State: `SYN_RECEIVED`.</li>
+                                            <li><strong>3. ACK:</strong> Client acknowledges server sequence number (`$ISN_s + 1$). Connection established! State: `ESTABLISHED`.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-warning fw-bold">TCP 4-Way Termination & Sockets:</span>
+                                        <ul class="pl-3 mt-2" style="list-style: disc; line-height: 1.6;">
+                                            <li><strong>Termination:</strong> Involves exchange of <code>FIN</code> and <code>ACK</code> flags. Transitions through `FIN_WAIT_1`, `FIN_WAIT_2`, and `TIME_WAIT` (2MSL timeout).</li>
+                                            <li><strong>Socket Tuple:</strong> Every active connection is uniquely identified by a 5-tuple: <code>(Protocol, Src IP, Src Port, Dst IP, Dst Port)</code>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Addressing Rules: IPv4 Address Classes & Private Ranges -->
+                        <div class="columns is-multiline mb-2">
+                            <div class="column is-12 mb-2">
+                                <p class="is-size-6 mono has-text-link fw-bold" style="color: #3273dc !important;">// IPV4_ADDRESS_CLASSES</p>
+                            </div>
+                            <div class="column is-12-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box">
+                                    <div class="table-container">
+                                        <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
+                                            <thead>
+                                                <tr class="has-text-link" style="color: #3273dc !important;">
+                                                    <th>Class</th>
+                                                    <th>Leading Bits</th>
+                                                    <th>First Octet Range</th>
+                                                    <th>Default Subnet Mask</th>
+                                                    <th>Network / Host Bits</th>
+                                                    <th>Primary Use Case</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong class="has-text-info">Class A</strong></td>
+                                                    <td><code>0</code></td>
+                                                    <td>1 – 126</td>
+                                                    <td>255.0.0.0 (/8)</td>
+                                                    <td>8 Net / 24 Host</td>
+                                                    <td>Massive enterprise & telecom networks</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong class="has-text-success">Class B</strong></td>
+                                                    <td><code>10</code></td>
+                                                    <td>128 – 191</td>
+                                                    <td>255.255.0.0 (/16)</td>
+                                                    <td>16 Net / 16 Host</td>
+                                                    <td>Medium-to-large corporate networks</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong class="has-text-warning">Class C</strong></td>
+                                                    <td><code>110</code></td>
+                                                    <td>192 – 223</td>
+                                                    <td>255.255.255.0 (/24)</td>
+                                                    <td>24 Net / 8 Host</td>
+                                                    <td>Small office & home local area networks</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong class="has-text-danger">Class D</strong></td>
+                                                    <td><code>1110</code></td>
+                                                    <td>224 – 239</td>
+                                                    <td>N/A (Multicast)</td>
+                                                    <td>N/A</td>
+                                                    <td>IP multicast routing & streaming</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong class="has-text-grey-light">Class E</strong></td>
+                                                    <td><code>1111</code></td>
+                                                    <td>240 – 255</td>
+                                                    <td>N/A (Experimental)</td>
+                                                    <td>N/A</td>
+                                                    <td>Research & experimental testing</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Private IP Ranges & Special Addresses -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
+                            <p class="is-size-6 mono has-text-link mb-2 fw-bold" style="color: #3273dc !important;">// PRIVATE_IP_RANGES</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text mt-2">
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-info fw-bold">Class A Private:</span><br>
+                                        <code>10.0.0.0 – 10.255.255.255</code><br>
+                                        <small class="has-text-grey-light">CIDR: <code>10.0.0.0/8</code> (16.7M hosts)</small>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-success fw-bold">Class B Private:</span><br>
+                                        <code>172.16.0.0 – 172.31.255.255</code><br>
+                                        <small class="has-text-grey-light">CIDR: <code>172.16.0.0/12</code> (1M hosts)</small>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-warning fw-bold">Class C Private:</span><br>
+                                        <code>192.168.0.0 – 192.168.255.255</code><br>
+                                        <small class="has-text-grey-light">CIDR: <code>192.168.0.0/16</code> (65k hosts)</small>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-danger fw-bold">Loopback (Localhost):</span><br>
+                                        <code>127.0.0.1</code> (Range: <code>127.0.0.0/8</code>)<br>
+                                        <small class="has-text-grey-light">Used for internal machine loopback testing.</small>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-primary fw-bold">APIPA / Link-Local:</span><br>
+                                        <code>169.254.0.0/16</code><br>
+                                        <small class="has-text-grey-light">Auto-assigned when DHCP server is unreachable.</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. Math & Formulas: Subnet Calculation Fundamentals & CIDR Table -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
+                            <p class="is-size-6 mono has-text-link mb-2 fw-bold" style="color: #3273dc !important;">// SUBNET_FORMULAS</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text mt-2">
+                                <div class="column is-6-tablet is-3-desktop">
+                                    <div class="p-3 networking-formula-item">
+                                        <span class="has-text-info fw-bold">Total Hosts (H host bits):</span><br>
+                                        <code>2^H</code>
+                                    </div>
+                                </div>
+                                <div class="column is-6-tablet is-3-desktop">
+                                    <div class="p-3 networking-formula-item">
+                                        <span class="has-text-success fw-bold">Usable Hosts:</span><br>
+                                        <code>(2^H) - 2</code>
+                                    </div>
+                                </div>
+                                <div class="column is-6-tablet is-3-desktop">
+                                    <div class="p-3 networking-formula-item">
+                                        <span class="has-text-warning fw-bold">Subnet Block Size:</span><br>
+                                        <code>256 - Octet Value</code>
+                                    </div>
+                                </div>
+                                <div class="column is-6-tablet is-3-desktop">
+                                    <div class="p-3 networking-formula-item">
+                                        <span class="has-text-danger fw-bold">Default Gateway:</span><br>
+                                        <code>Typically 1st Usable IP</code>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="is-size-7 has-text-grey-light mt-3 mb-0">
+                                <strong>Note on Default Gateways:</strong> The default gateway is the router interface IP address used by local hosts to forward traffic destined for outside networks (e.g., the internet). By industry convention, it is assigned the <strong>first usable IP address</strong> in the subnet range (Network ID + 1).
+                            </p>
+                        </div>
+
+                        <!-- CIDR Quick Reference Table -->
+                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5">
+                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// CIDR & MASK</p>
+                            <div class="table-container">
+                                <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
+                                    <thead>
+                                        <tr class="has-text-link" style="color: #3273dc !important;">
+                                            <th>CIDR</th>
+                                            <th>Subnet Mask</th>
+                                            <th>Binary Mask (Last Octet)</th>
+                                            <th>Total Hosts</th>
+                                            <th>Usable Hosts</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>/24</td>
+                                            <td>255.255.255.0</td>
+                                            <td><code>00000000</code></td>
+                                            <td>256</td>
+                                            <td>254</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/25</td>
+                                            <td>255.255.255.128</td>
+                                            <td><code>10000000</code></td>
+                                            <td>128</td>
+                                            <td>126</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/26</td>
+                                            <td>255.255.255.192</td>
+                                            <td><code>11000000</code></td>
+                                            <td>64</td>
+                                            <td>62</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/27</td>
+                                            <td>255.255.255.224</td>
+                                            <td><code>11100000</code></td>
+                                            <td>32</td>
+                                            <td>30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/28</td>
+                                            <td>255.255.255.240</td>
+                                            <td><code>11110000</code></td>
+                                            <td>16</td>
+                                            <td>14</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/29</td>
+                                            <td>255.255.255.248</td>
+                                            <td><code>11111000</code></td>
+                                            <td>8</td>
+                                            <td>6</td>
+                                        </tr>
+                                        <tr>
+                                            <td>/30</td>
+                                            <td>255.255.255.252</td>
+                                            <td><code>11111100</code></td>
+                                            <td>4</td>
+                                            <td>2 (Point-to-Point)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- 6. Practical Execution: 7 Unique Scenarios -->
+                        <div class="columns is-multiline">
+                            <div class="column is-12 mb-2">
+                                <p class="is-size-6 mono has-text-link fw-bold" style="color: #3273dc !important;">// SCENARIOS</p>
+                            </div>
+
+                            <!-- Example 1: /26 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_1: 192.168.10.67 /26</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.192</code></li>
+                                        <li><strong>Block Size:</strong> <code>64</code> (Range: <code>64-127</code>)</li>
+                                        <li><strong>Target IP (.67):</strong> Falls in <code>64-127</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>192.168.10.64</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.10.65</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.65</code> – <code>.126</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>192.168.10.127</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 2: /28 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_2: 10.20.30.145 /28</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.240</code></li>
+                                        <li><strong>Block Size:</strong> <code>16</code> (Range: <code>144-159</code>)</li>
+                                        <li><strong>Target IP (.145):</strong> Falls in <code>144-159</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>10.20.30.144</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>10.20.30.145</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.145</code> – <code>.158</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>10.20.30.159</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 3: /22 Subnet (Third Octet) -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_3: 172.16.50.200 /22</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.252.0</code></li>
+                                        <li><strong>Block Size (3rd):</strong> <code>4</code> (Range: <code>48-51</code>)</li>
+                                        <li><strong>Target IP (.50):</strong> Falls in 3rd octet block <code>48-51</code>:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>172.16.48.0</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>172.16.48.1</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>172.16.48.1</code> – <code>172.16.51.254</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>172.16.51.255</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 4: /25 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_4: 192.168.1.130 /25</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.128</code></li>
+                                        <li><strong>Block Size:</strong> <code>128</code> (Range: <code>128-255</code>)</li>
+                                        <li><strong>Target IP (.130):</strong> Falls in <code>128-255</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>192.168.1.128</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.1.129</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.129</code> – <code>.254</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>192.168.1.255</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 5: /29 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_5: 10.0.5.42 /29</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.248</code></li>
+                                        <li><strong>Block Size:</strong> <code>8</code> (Range: <code>40-47</code>)</li>
+                                        <li><strong>Target IP (.42):</strong> Falls in <code>40-47</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>10.0.5.40</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>10.0.5.41</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.41</code> – <code>.46</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>10.0.5.47</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 6: /27 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_6: 172.20.100.15 /27</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.224</code></li>
+                                        <li><strong>Block Size:</strong> <code>32</code> (Range: <code>0-31</code>)</li>
+                                        <li><strong>Target IP (.15):</strong> Falls in <code>0-31</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>172.20.100.0</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>172.20.100.1</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.1</code> – <code>.30</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>172.20.100.31</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 7: /30 Subnet -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_7: 192.168.100.220 /30</p>
+                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                        <li><strong>Mask:</strong> <code>255.255.255.252</code></li>
+                                        <li><strong>Block Size:</strong> <code>4</code> (Range: <code>220-223</code>)</li>
+                                        <li><strong>Target IP (.220):</strong> Falls in <code>220-223</code> block:
+                                            <ul class="mt-1" style="list-style: circle;">
+                                                <li><span class="has-text-success">Network ID:</span> <code>192.168.100.220</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.100.221</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.221</code> – <code>.222</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>192.168.100.223</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

@@ -567,6 +567,43 @@ pre code.hljs {
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
 }
 
+.networking-tile {
+    border-left: 4px solid #3273dc !important;
+    box-shadow: 0 0 20px rgba(50, 115, 220, 0.15);
+    background: rgba(10, 15, 25, 0.95) !important;
+}
+
+.networking-desc,
+.networking-text {
+    color: var(--text-body) !important;
+}
+
+.networking-formula-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+}
+
+.networking-table {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+.networking-table th {
+    color: #3273dc !important;
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+}
+
+.networking-table td {
+    color: #c9d1d9 !important;
+    border-color: var(--border-color) !important;
+    background-color: transparent !important;
+}
+
+.networking-example-box {
+    border-left: 3px solid #3273dc !important;
+}
+
 @keyframes pulse-xbox-green {
     0% {
         box-shadow: 0 0 0 0 rgba(16, 124, 16, 0.5);
@@ -839,5 +876,99 @@ pre code.hljs {
     .lang-target-meta {
         color: #4a5568 !important;
         opacity: 0.85;
+    }
+
+    .button.is-warning.is-outlined {
+        background-color: #d97706 !important;
+        border-color: #b45309 !important;
+        color: #ffffff !important;
+    }
+    .button.is-warning.is-outlined:hover {
+        background-color: #b45309 !important;
+        color: #ffffff !important;
+    }
+
+    .button.is-info.is-outlined {
+        background-color: #0284c7 !important;
+        border-color: #0369a1 !important;
+        color: #ffffff !important;
+    }
+    .button.is-info.is-outlined:hover {
+        background-color: #0369a1 !important;
+        color: #ffffff !important;
+    }
+
+    .button.is-success.is-outlined {
+        background-color: #16a34a !important;
+        border-color: #15803d !important;
+        color: #ffffff !important;
+    }
+    .button.is-success.is-outlined:hover {
+        background-color: #15803d !important;
+        color: #ffffff !important;
+    }
+
+    .button.is-link.is-outlined,
+    .button.is-outlined-dark {
+        background-color: #4f46e5 !important;
+        border-color: #4338ca !important;
+        color: #ffffff !important;
+    }
+    .button.is-link.is-outlined:hover,
+    .button.is-outlined-dark:hover {
+        background-color: #4338ca !important;
+        color: #ffffff !important;
+    }
+
+    .networking-tile {
+        background: #ffffff !important;
+        border-left: 4px solid #2563eb !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .networking-desc,
+    .networking-text {
+        color: #334155 !important;
+    }
+
+    .networking-sub-box {
+        background-color: #f8fafc !important;
+        border-color: #cbd5e3 !important;
+    }
+
+    .networking-formula-item {
+        background: rgba(0, 0, 0, 0.03) !important;
+        color: #1e293b !important;
+    }
+
+    .networking-formula-item code {
+        color: #0284c7 !important;
+        background: transparent !important;
+    }
+
+    .networking-table {
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+    }
+
+    .networking-table th {
+        color: #1d4ed8 !important;
+        background-color: #f1f5f9 !important;
+        border-color: #cbd5e3 !important;
+    }
+
+    .networking-table td {
+        color: #334155 !important;
+        border-color: #cbd5e3 !important;
+        background-color: transparent !important;
+    }
+
+    .networking-table code {
+        color: #0284c7 !important;
+        background: transparent !important;
+    }
+
+    .networking-example-box {
+        border-left: 3px solid #2563eb !important;
     }
 }
