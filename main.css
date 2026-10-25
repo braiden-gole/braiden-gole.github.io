@@ -1,6 +1,7 @@
 :root {
     --xbox-green: #107c10;
     --system-blue: #4da6ff;
+    --purple-primary: #9b59b6;
     --bg-light: #080a0f;
     --bg-deep-light: #0c0e14;
     --card-bg: #121620;
@@ -567,15 +568,61 @@ pre code.hljs {
     box-shadow: 0 0 8px rgba(255, 215, 0, 0.3);
 }
 
+.networking-anchor {
+    scroll-margin-top: 2rem;
+}
+
 .networking-tile {
-    border-left: 4px solid #3273dc !important;
-    box-shadow: 0 0 20px rgba(50, 115, 220, 0.15);
-    background: rgba(10, 15, 25, 0.95) !important;
+    border-left: 4px solid var(--purple-primary) !important;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.15);
+    background: rgba(20, 12, 28, 0.95) !important;
+}
+
+.title.is-3.networking-title {
+    color: var(--purple-primary) !important;
+    text-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
 }
 
 .networking-desc,
 .networking-text {
     color: var(--text-body) !important;
+}
+
+.networking-accent-text {
+    color: var(--purple-primary) !important;
+}
+
+.networking-sub-box {
+    border-left: 3px solid var(--purple-primary) !important;
+}
+
+.networking-gap {
+    gap: 1rem;
+}
+
+.networking-btn {
+    background-color: var(--purple-primary) !important;
+    color: #ffffff !important;
+    border: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.networking-btn:hover {
+    background-color: #8e44ad !important;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+}
+
+.networking-nav-btn {
+    background: transparent !important;
+    color: var(--purple-primary) !important;
+    border: 1px solid var(--purple-primary) !important;
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.networking-nav-btn:hover {
+    background-color: var(--purple-primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 12px rgba(155, 89, 182, 0.4);
 }
 
 .networking-formula-item {
@@ -589,7 +636,7 @@ pre code.hljs {
 }
 
 .networking-table th {
-    color: #3273dc !important;
+    color: var(--purple-primary) !important;
     background-color: transparent !important;
     border-color: var(--border-color) !important;
 }
@@ -601,7 +648,21 @@ pre code.hljs {
 }
 
 .networking-example-box {
-    border-left: 3px solid #3273dc !important;
+    border-left: 3px solid var(--purple-primary) !important;
+}
+
+.networking-list {
+    list-style: disc !important;
+    line-height: 1.6;
+}
+
+.networking-sublist {
+    line-height: 1.8;
+    list-style: disc !important;
+}
+
+.networking-inner-list {
+    list-style: circle !important;
 }
 
 @keyframes pulse-xbox-green {
@@ -883,6 +944,7 @@ pre code.hljs {
         border-color: #b45309 !important;
         color: #ffffff !important;
     }
+
     .button.is-warning.is-outlined:hover {
         background-color: #b45309 !important;
         color: #ffffff !important;
@@ -893,6 +955,7 @@ pre code.hljs {
         border-color: #0369a1 !important;
         color: #ffffff !important;
     }
+    
     .button.is-info.is-outlined:hover {
         background-color: #0369a1 !important;
         color: #ffffff !important;
@@ -910,20 +973,26 @@ pre code.hljs {
 
     .button.is-link.is-outlined,
     .button.is-outlined-dark {
-        background-color: #4f46e5 !important;
-        border-color: #4338ca !important;
+        background-color: #8e44ad !important;
+        border-color: #7d3c98 !important;
         color: #ffffff !important;
     }
     .button.is-link.is-outlined:hover,
     .button.is-outlined-dark:hover {
-        background-color: #4338ca !important;
+        background-color: #7d3c98 !important;
         color: #ffffff !important;
     }
 
+    /* --- NETWORKING SECTION & NAV BUTTON STYLES (LIGHT MODE) --- */
     .networking-tile {
         background: #ffffff !important;
-        border-left: 4px solid #2563eb !important;
+        border-left: 4px solid #8e44ad !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .title.is-3.networking-title {
+        color: #8e44ad !important;
+        text-shadow: none !important;
     }
 
     .networking-desc,
@@ -931,9 +1000,28 @@ pre code.hljs {
         color: #334155 !important;
     }
 
+    .networking-accent-text {
+        color: #8e44ad !important;
+    }
+
     .networking-sub-box {
         background-color: #f8fafc !important;
         border-color: #cbd5e3 !important;
+        border-left: 3px solid #8e44ad !important;
+    }
+
+    .networking-btn,
+    .networking-nav-btn {
+        background-color: #8e44ad !important;
+        border-color: #7d3c98 !important;
+        color: #ffffff !important;
+    }
+
+    .networking-btn:hover,
+    .networking-nav-btn:hover {
+        background-color: #7d3c98 !important;
+        border-color: #6c3483 !important;
+        color: #ffffff !important;
     }
 
     .networking-formula-item {
@@ -952,7 +1040,7 @@ pre code.hljs {
     }
 
     .networking-table th {
-        color: #1d4ed8 !important;
+        color: #8e44ad !important;
         background-color: #f1f5f9 !important;
         border-color: #cbd5e3 !important;
     }
@@ -969,6 +1057,6 @@ pre code.hljs {
     }
 
     .networking-example-box {
-        border-left: 3px solid #2563eb !important;
+        border-left: 3px solid #8e44ad !important;
     }
 }

@@ -150,7 +150,7 @@
                                 <span class="icon"><i class="fas fa-sitemap"></i></span>
                                 <span>Diagrams</span>
                             </a>
-                            <a href="#networking" class="button is-link is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
+                            <a href="#networking" class="button networking-nav-btn mono is-size-7 py-3 px-4 is-flex-grow-1">
                                 <span class="icon"><i class="fas fa-network-wired"></i></span>
                                 <span>Networking & Subnetting</span>
                             </a>
@@ -2065,11 +2065,11 @@
                     </article>
 
                     <!-- Networking & Subnetting Section (Matched to button color: #3273dc / is-link) -->
-                    <div id="networking" style="scroll-margin-top: 2rem;"></div>
+                    <div id="networking" class="networking-anchor"></div>
 
                     <article class="modern-tile grid-full-width networking-tile">
                         <div class="is-flex is-justify-content-space-between is-align-items-center border-bottom-small pb-3 mb-4 flex-wrap">
-                            <h3 class="title is-3 has-text-link mb-0" style="color: #3273dc !important; text-shadow: 0 0 10px rgba(50, 115, 220, 0.4);">
+                            <h3 class="title is-3 mb-0 networking-title">
                                 <span class="icon mx-4"><i class="fas fa-network-wired"></i></span>Networking
                             </h3>
                         </div>
@@ -2083,14 +2083,14 @@
                         </p>
 
                         <!-- 1. Macro Architecture: Architectural Packet Routing Viewer Link Card -->
-                        <div class="box bg-deep border-accent p-4 mb-5" style="border-left: 3px solid #3273dc;">
-                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// PACKET_ROUTING_ENGINE</p>
-                            <div class="is-flex is-flex-direction-column" style="gap: 1rem;">
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// PACKET_ROUTING_ENGINE</p>
+                            <div class="is-flex is-flex-direction-column networking-gap">
                                 <p class="is-size-6 mb-0">
                                     Visualizing host-level decision engines, bitwise AND subnet matching, local ARP resolution, and Default Gateway routing paths.
                                 </p>
                                 <div class="is-flex is-justify-content-flex-end">
-                                    <a href="viewer.html?src=images/networking-packet-routing.svg&title=Packet%20Routing%20Architecture&from=networking" target="_blank" rel="noopener noreferrer" class="button is-link is-small">
+                                    <a href="viewer.html?src=images/networking-packet-routing.svg&title=Packet%20Routing%20Architecture&from=networking" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
                                         <span>View Diagram</span>
                                     </a>
                                 </div>
@@ -2098,12 +2098,12 @@
                         </div>
 
                         <!-- 2. Network Stack Theory: OSI & TCP/IP Layers Architecture Reference -->
-                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5" style="border-left: 3px solid #3273dc;">
-                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// (OSI & TCP/IP MODELS)</p>
+                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// (OSI & TCP/IP MODELS)</p>
                             <div class="table-container">
                                 <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
                                     <thead>
-                                        <tr class="has-text-link" style="color: #3273dc !important;">
+                                        <tr class="networking-accent-text">
                                             <th>OSI Layer</th>
                                             <th>TCP/IP Layer</th>
                                             <th>Core Protocols & Services</th>
@@ -2164,13 +2164,13 @@
                         </div>
 
                         <!-- 3. Protocol Mechanics: TCP State Lifecycle & Handshake -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
-                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// TCP_CONNECTION_LIFECYCLE</p>
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// TCP_CONNECTION_LIFECYCLE</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
                                     <div class="p-3 networking-formula-item h-100">
                                         <span class="has-text-info fw-bold">TCP 3-Way Handshake (Connection Setup):</span>
-                                        <ul class="pl-3 mt-2" style="list-style: disc; line-height: 1.6;">
+                                        <ul class="pl-3 mt-2 networking-list">
                                             <li><strong>1. SYN:</strong> Client sends packet with <code>SYN</code> flag and initial sequence number ($ISN_c$). State: `SYN_SENT`.</li>
                                             <li><strong>2. SYN-ACK:</strong> Server acknowledges with its own <code>SYN</code> and <code>ACK ($ISN_c + 1$)</code>. State: `SYN_RECEIVED`.</li>
                                             <li><strong>3. ACK:</strong> Client acknowledges server sequence number (`$ISN_s + 1$). Connection established! State: `ESTABLISHED`.</li>
@@ -2180,7 +2180,7 @@
                                 <div class="column is-12-tablet is-6-desktop">
                                     <div class="p-3 networking-formula-item h-100">
                                         <span class="has-text-warning fw-bold">TCP 4-Way Termination & Sockets:</span>
-                                        <ul class="pl-3 mt-2" style="list-style: disc; line-height: 1.6;">
+                                        <ul class="pl-3 mt-2 networking-list">
                                             <li><strong>Termination:</strong> Involves exchange of <code>FIN</code> and <code>ACK</code> flags. Transitions through `FIN_WAIT_1`, `FIN_WAIT_2`, and `TIME_WAIT` (2MSL timeout).</li>
                                             <li><strong>Socket Tuple:</strong> Every active connection is uniquely identified by a 5-tuple: <code>(Protocol, Src IP, Src Port, Dst IP, Dst Port)</code>.</li>
                                         </ul>
@@ -2192,14 +2192,14 @@
                         <!-- 4. Addressing Rules: IPv4 Address Classes & Private Ranges -->
                         <div class="columns is-multiline mb-2">
                             <div class="column is-12 mb-2">
-                                <p class="is-size-6 mono has-text-link fw-bold" style="color: #3273dc !important;">// IPV4_ADDRESS_CLASSES</p>
+                                <p class="is-size-6 mono fw-bold networking-accent-text">// IPV4_ADDRESS_CLASSES</p>
                             </div>
                             <div class="column is-12-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box">
                                     <div class="table-container">
                                         <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
                                             <thead>
-                                                <tr class="has-text-link" style="color: #3273dc !important;">
+                                                <tr class="networking-accent-text">
                                                     <th>Class</th>
                                                     <th>Leading Bits</th>
                                                     <th>First Octet Range</th>
@@ -2257,8 +2257,8 @@
                         </div>
 
                         <!-- Private IP Ranges & Special Addresses -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
-                            <p class="is-size-6 mono has-text-link mb-2 fw-bold" style="color: #3273dc !important;">// PRIVATE_IP_RANGES</p>
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-2 fw-bold networking-accent-text">// PRIVATE_IP_RANGES</p>
                             <div class="columns is-multiline mono is-size-7 networking-text mt-2">
                                 <div class="column is-12-tablet is-4-desktop">
                                     <div class="p-3 networking-formula-item h-100">
@@ -2299,8 +2299,8 @@
                         </div>
 
                         <!-- 5. Math & Formulas: Subnet Calculation Fundamentals & CIDR Table -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" style="border-left: 3px solid #3273dc;">
-                            <p class="is-size-6 mono has-text-link mb-2 fw-bold" style="color: #3273dc !important;">// SUBNET_FORMULAS</p>
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-2 fw-bold networking-accent-text">// SUBNET_FORMULAS</p>
                             <div class="columns is-multiline mono is-size-7 networking-text mt-2">
                                 <div class="column is-6-tablet is-3-desktop">
                                     <div class="p-3 networking-formula-item">
@@ -2334,11 +2334,11 @@
 
                         <!-- CIDR Quick Reference Table -->
                         <div class="box bg-deep p-4 h-100 networking-sub-box mb-5">
-                            <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// CIDR & MASK</p>
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// CIDR & MASK</p>
                             <div class="table-container">
                                 <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
                                     <thead>
-                                        <tr class="has-text-link" style="color: #3273dc !important;">
+                                        <tr class="networking-accent-text">
                                             <th>CIDR</th>
                                             <th>Subnet Mask</th>
                                             <th>Binary Mask (Last Octet)</th>
@@ -2404,18 +2404,18 @@
                         <!-- 6. Practical Execution: 7 Unique Scenarios -->
                         <div class="columns is-multiline">
                             <div class="column is-12 mb-2">
-                                <p class="is-size-6 mono has-text-link fw-bold" style="color: #3273dc !important;">// SCENARIOS</p>
+                                <p class="is-size-6 mono fw-bold networking-accent-text">// SCENARIOS</p>
                             </div>
 
                             <!-- Example 1: /26 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_1: 192.168.10.67 /26</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_1: 192.168.10.67 /26</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.192</code></li>
                                         <li><strong>Block Size:</strong> <code>64</code> (Range: <code>64-127</code>)</li>
                                         <li><strong>Target IP (.67):</strong> Falls in <code>64-127</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>192.168.10.64</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.10.65</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.65</code> – <code>.126</code></li>
@@ -2429,12 +2429,12 @@
                             <!-- Example 2: /28 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_2: 10.20.30.145 /28</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_2: 10.20.30.145 /28</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.240</code></li>
                                         <li><strong>Block Size:</strong> <code>16</code> (Range: <code>144-159</code>)</li>
                                         <li><strong>Target IP (.145):</strong> Falls in <code>144-159</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>10.20.30.144</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>10.20.30.145</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.145</code> – <code>.158</code></li>
@@ -2448,12 +2448,12 @@
                             <!-- Example 3: /22 Subnet (Third Octet) -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_3: 172.16.50.200 /22</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_3: 172.16.50.200 /22</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.252.0</code></li>
                                         <li><strong>Block Size (3rd):</strong> <code>4</code> (Range: <code>48-51</code>)</li>
                                         <li><strong>Target IP (.50):</strong> Falls in 3rd octet block <code>48-51</code>:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>172.16.48.0</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>172.16.48.1</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>172.16.48.1</code> – <code>172.16.51.254</code></li>
@@ -2467,12 +2467,12 @@
                             <!-- Example 4: /25 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_4: 192.168.1.130 /25</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_4: 192.168.1.130 /25</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.128</code></li>
                                         <li><strong>Block Size:</strong> <code>128</code> (Range: <code>128-255</code>)</li>
                                         <li><strong>Target IP (.130):</strong> Falls in <code>128-255</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>192.168.1.128</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.1.129</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.129</code> – <code>.254</code></li>
@@ -2486,12 +2486,12 @@
                             <!-- Example 5: /29 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_5: 10.0.5.42 /29</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_5: 10.0.5.42 /29</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.248</code></li>
                                         <li><strong>Block Size:</strong> <code>8</code> (Range: <code>40-47</code>)</li>
                                         <li><strong>Target IP (.42):</strong> Falls in <code>40-47</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>10.0.5.40</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>10.0.5.41</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.41</code> – <code>.46</code></li>
@@ -2505,12 +2505,12 @@
                             <!-- Example 6: /27 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_6: 172.20.100.15 /27</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_6: 172.20.100.15 /27</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.224</code></li>
                                         <li><strong>Block Size:</strong> <code>32</code> (Range: <code>0-31</code>)</li>
                                         <li><strong>Target IP (.15):</strong> Falls in <code>0-31</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>172.20.100.0</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>172.20.100.1</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.1</code> – <code>.30</code></li>
@@ -2524,12 +2524,12 @@
                             <!-- Example 7: /30 Subnet -->
                             <div class="column is-12-tablet is-4-desktop mb-4">
                                 <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
-                                    <p class="is-size-6 mono has-text-link mb-3 fw-bold" style="color: #3273dc !important;">// EXAMPLE_7: 192.168.100.220 /30</p>
-                                    <ul class="mono is-size-7 networking-text pl-3" style="line-height: 1.8; list-style: disc;">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_7: 192.168.100.220 /30</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.252</code></li>
                                         <li><strong>Block Size:</strong> <code>4</code> (Range: <code>220-223</code>)</li>
                                         <li><strong>Target IP (.220):</strong> Falls in <code>220-223</code> block:
-                                            <ul class="mt-1" style="list-style: circle;">
+                                            <ul class="mt-1 networking-inner-list">
                                                 <li><span class="has-text-success">Network ID:</span> <code>192.168.100.220</code></li>
                                                 <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.100.221</code></li>
                                                 <li><span class="has-text-info">Usable Range:</span> <code>.221</code> – <code>.222</code></li>
