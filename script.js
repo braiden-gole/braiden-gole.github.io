@@ -447,3 +447,9 @@ function resetRepositoryViewerState(codeContainerId, fileLabelId, itemClass) {
         element.style.color = "var(--text-body)"
     })
 }
+
+// Expose collapse functions globally to resolve ES module scope issues with inline onclick handlers.
+window.collapseAndClear = collapseAndClear
+window.collapseAndClearPython = collapseAndClearPython
+window.collapseAndClearGolang = collapseAndClearGolang
+window.collapseAndClearUnderTheHood = collapseAndClearUnderTheHood
