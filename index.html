@@ -144,7 +144,7 @@
                             </a>
                             <a href="#networking" class="button networking-nav-btn mono is-size-7 py-3 px-4 is-flex-grow-1">
                                 <span class="icon"><i class="fas fa-network-wired"></i></span>
-                                <span>Networking & Subnetting</span>
+                                <span>Networking</span>
                             </a>
                         </div>
                     </div>
@@ -1942,12 +1942,12 @@
                             </h3>
                         </div>
 
-                        <p class="is-size-6">Network Stack Mechanics & CIDR Computations</p>
+                        <p class="is-size-6">Network Stack Mechanics, CIDR Computations & Transport Engineering</p>
 
                         <hr>
 
                         <p class="is-size-6 mb-5 networking-desc">
-                            Comprehensive implementation of network engineering principles: OSI/TCP-IP encapsulation, transport-layer connection state machinery, IPv4 addressing classes, CIDR subnetting mathematics, default gateway conventions, and multi-octet block calculations.
+                            Comprehensive implementation of enterprise network engineering principles: OSI/TCP-IP encapsulation, recursive DNS resolution and cryptographic validation chains, transport-layer connection state machinery, congestion control, QUIC multiplexing, IPv4 addressing classes, CIDR subnetting mathematics, default gateway conventions, multi-octet block calculations, and ICE-based NAT traversal mechanics.
                         </p>
 
                         <!-- 1. Macro Architecture -->
@@ -1983,46 +1983,46 @@
                                         <tr>
                                             <td><strong>7. Application</strong></td>
                                             <td rowspan="3"><strong>Application</strong></td>
-                                            <td>HTTP/S, DNS, DHCP, SSH, FTP, SMTP</td>
+                                            <td>HTTP/1.1, HTTP/2, HTTP/3, DNS, DHCP, SSH, FTP, SMTP</td>
                                             <td>Data</td>
                                             <td>User-facing protocols, resource querying, and session data representation.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>6. Presentation</strong></td>
-                                            <td>TLS / SSL, JPEG, ASCII, Encryption</td>
+                                            <td>TLS 1.2/1.3, JPEG, ASCII, ASN.1 Encryption</td>
                                             <td>Data</td>
                                             <td>Data formatting, cryptographic compression, and syntax translation.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>5. Session</strong></td>
-                                            <td>NetBIOS, RPC, Sockets API</td>
+                                            <td>NetBIOS, RPC, Sockets API, gRPC Session State</td>
                                             <td>Data</td>
                                             <td>Interhost communication management and connection state checkpoints.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>4. Transport</strong></td>
                                             <td><strong>Transport</strong></td>
-                                            <td><strong>TCP</strong> (Reliable, Stream), <strong>UDP</strong> (Fast, Datagram)</td>
-                                            <td>Segment (TCP) / Datagram (UDP)</td>
+                                            <td><strong>TCP</strong> (Reliable, Stream), <strong>UDP</strong> (Fast, Datagram), <strong>QUIC</strong> (Multiplexed)</td>
+                                            <td>Segment (TCP) / Datagram (UDP/QUIC)</td>
                                             <td>End-to-end flow control, error recovery, port multiplexing, and sequencing.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>3. Network</strong></td>
                                             <td><strong>Internet</strong></td>
-                                            <td>IPv4, IPv6, ICMP, IPsec, OSPF, BGP</td>
+                                            <td>IPv4, IPv6, ICMPv4/v6, IPsec, OSPF, BGP, ARP</td>
                                             <td>Packet / Datagram</td>
                                             <td>Logical addressing, packet routing across routers, and path determination.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>2. Data Link</strong></td>
                                             <td rowspan="2"><strong>Network Access / Link</strong></td>
-                                            <td>Ethernet, ARP, PPP, MAC Addressing</td>
+                                            <td>Ethernet 802.3, PPP, MAC Addressing, VLAN 802.1Q</td>
                                             <td>Frame</td>
                                             <td>Node-to-node physical transmission and MAC error detection.</td>
                                         </tr>
                                         <tr>
                                             <td><strong>1. Physical</strong></td>
-                                            <td>Cables, Hubs, NICs, Radio Waves (RF)</td>
+                                            <td>CAT6/Fiber Cables, Hubs, NICs, Radio Waves (RF)</td>
                                             <td>Bits</td>
                                             <td>Raw binary bit stream conversion into electrical or optical signals.</td>
                                         </tr>
@@ -2031,33 +2031,128 @@
                             </div>
                         </div>
 
-                        <!-- 3. Protocol Mechanics -->
+                        <!-- 3. DNS Resolution Pipeline & DNSSEC -->
                         <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
-                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// TCP_LIFECYCLE & SOCKETS</p>
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// DNS_RESOLUTION_PIPELINE & SECURITY</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
                                     <div class="p-3 networking-formula-item h-100">
-                                        <span class="has-text-info fw-bold">TCP 3-Way Handshake (Connection Setup):</span>
+                                        <span class="has-text-info fw-bold">Iterative / Recursive Query Lifecycle:</span>
                                         <ul class="pl-3 mt-2 networking-list">
-                                            <li><strong>1. SYN:</strong> Client sends packet with <code>SYN</code> flag and initial sequence number ($ISN_c$). State: `SYN_SENT`.</li>
-                                            <li><strong>2. SYN-ACK:</strong> Server acknowledges with its own <code>SYN</code> and <code>ACK ($ISN_c + 1$)</code>. State: `SYN_RECEIVED`.</li>
-                                            <li><strong>3. ACK:</strong> Client acknowledges server sequence number (`$ISN_s + 1$). Connection established! State: `ESTABLISHED`.</li>
+                                            <li><strong>1. Stub Resolver Cache:</strong> OS and browser check local memory (TTL expiration check).</li>
+                                            <li><strong>2. Recursive Resolver:</strong> ISP/Public resolver (e.g., <code>1.1.1.1</code>) handles client delegation.</li>
+                                            <li><strong>3. Root (`.`) & TLD (`.com`):</strong> Root directs to TLD nameservers; TLD returns Authoritative NS records.</li>
+                                            <li><strong>4. EDNS0 Extensions:</strong> UDP payload size expansion up to 4096 bytes to avoid TCP fallback overhead.</li>
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="column is-12-tablet is-6-desktop">
                                     <div class="p-3 networking-formula-item h-100">
-                                        <span class="has-text-warning fw-bold">TCP 4-Way Termination & Sockets:</span>
+                                        <span class="has-text-warning fw-bold">DNSSEC Cryptographic Validation:</span>
                                         <ul class="pl-3 mt-2 networking-list">
-                                            <li><strong>Termination:</strong> Involves exchange of <code>FIN</code> and <code>ACK</code> flags. Transitions through `FIN_WAIT_1`, `FIN_WAIT_2`, and `TIME_WAIT` (2MSL timeout).</li>
-                                            <li><strong>Socket Tuple:</strong> Every active connection is uniquely identified by a 5-tuple: <code>(Protocol, Src IP, Src Port, Dst IP, Dst Port)</code>.</li>
+                                            <li><code>RRSIG:</code> Digital signatures cryptographically binding resource record sets to public keys.</li>
+                                            <li><code>DNSKEY & DS:</code> Chain of trust established upward from zone signing keys to root anchor.</li>
+                                            <li><strong>Anycast Load Balancing:</strong> Routing DNS queries across globally distributed edge nodes for minimal latency.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="is-flex is-justify-content-flex-end mt-4">
+                                <a href="viewer.html?src=images/dns-resolution-pipelines.svg&title=DNS%20Resolution%20Pipeline&from=networking" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                    <span>View Diagram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Protocol Mechanics: TCP & Sockets -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// TCP_LIFECYCLE, FLOW CONTROL & SOCKETS</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text">
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-info fw-bold">TCP State Machinery & Handshakes:</span>
+                                        <ul class="pl-3 mt-2 networking-list">
+                                            <li><strong>1. SYN:</strong> Client sends initial sequence number ($ISN_c$). State: <code>SYN_SENT</code>.</li>
+                                            <li><strong>2. SYN-ACK:</strong> Server responds with $ISN_s$ and <code>ACK ($ISN_c + 1$)</code>. State: <code>SYN_RECEIVED</code>.</li>
+                                            <li><strong>3. ACK & Termination:</strong> Client ACKs server sequence. 4-way teardown transitions through <code>FIN_WAIT_1</code>, <code>FIN_WAIT_2</code>, and <code>TIME_WAIT</code> (2MSL timeout).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-warning fw-bold">Flow, Congestion Control & Sockets:</span>
+                                        <ul class="pl-3 mt-2 networking-list">
+                                            <li><strong>Sliding Windows:</strong> Dynamic receiver buffer advertised window preventing buffer overflows.</li>
+                                            <li><strong>Congestion Control:</strong> Slow Start, Congestion Avoidance, Fast Retransmit, and modern BBR/CUBIC algorithms.</li>
+                                            <li><strong>Socket 5-Tuple:</strong> Unique connection identifier: <code>(Protocol, Src IP, Src Port, Dst IP, Dst Port)</code>.</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 4. Addressing Rules -->
+                        <!-- 5. QUIC & HTTP/3 Modern Transport -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// QUIC_AND_HTTP3_TRANSPORT</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text">
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-success fw-bold">UDP Transport & TLS 1.3:</span><br>
+                                        Runs in user-space over <code>UDP</code> with native cryptographic protection. Merges transport and security handshakes, enabling <strong>0-RTT connection resumption</strong> for repeat clients.
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-info fw-bold">Stream Multiplexing:</span><br>
+                                        Completely eradicates TCP Head-of-Line (HoL) blocking. Individual application streams are isolated; packet loss on stream $A$ never stalls data delivery on stream $B$.
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-4-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-warning fw-bold">Connection Migration:</span><br>
+                                        Identified via a persistent 64-bit Connection ID rather than IP/Port pairs. Seamlessly maintains state when clients roam between Wi-Fi and cellular networks.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="is-flex is-justify-content-flex-end mt-4">
+                                <a href="viewer.html?src=images/quic-http-3.svg&title=QUIC%20and%20HTTP/3%20Transport&from=networking" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                    <span>View Diagram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 6. NAT Traversal, ICE & STUN/TURN -->
+                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
+                            <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// NAT_TRAVERSAL_ICE_STUN_TURN</p>
+                            <div class="columns is-multiline mono is-size-7 networking-text">
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-danger fw-bold">NAT Behavioral Classifications:</span>
+                                        <ul class="pl-3 mt-2 networking-list">
+                                            <li><strong>Full & Restricted Cone:</strong> Allows inbound traffic from external sources once an outbound mapping is established.</li>
+                                            <li><strong>Symmetric NAT:</strong> Allocates a unique external port per destination IP/port pair, blocking standard P2P hole-punching and necessitating relay servers.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="column is-12-tablet is-6-desktop">
+                                    <div class="p-3 networking-formula-item h-100">
+                                        <span class="has-text-primary fw-bold">ICE Candidate Framework:</span>
+                                        <ul class="pl-3 mt-2 networking-list">
+                                            <li><code>STUN:</code> Discovers local reflexive public IP and port mappings behind stateful routers.</li>
+                                            <li><code>TURN:</code> Relays media/data streams through an intermediate proxy when symmetric NAT restrictions prevent direct connectivity.</li>
+                                            <li><strong>Candidate Prioritization:</strong> Sorts pathways (Host > Server Reflexive > Relayed) to establish optimal low-latency connections.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="is-flex is-justify-content-flex-end mt-4">
+                                <a href="viewer.html?src=images/ice-candidate-gathering-stun-binding-and-turn-relay-fallback.svg&title=ICE%20Candidate%20Gathering,%20STUN%20Binding%20and%20TURN%20Relay%20Fallback&from=networking" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                    <span>View Diagram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 7. Addressing Rules -->
                         <div class="columns is-multiline mb-2">
                             <div class="column is-12 mb-2">
                                 <p class="is-size-6 mono fw-bold networking-accent-text">// IPV4_ADDRESS_CLASSES</p>
@@ -2166,7 +2261,7 @@
                             </div>
                         </div>
 
-                        <!-- 5. Math & Formulas -->
+                        <!-- 8. Math & Formulas -->
                         <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box">
                             <p class="is-size-6 mono mb-2 fw-bold networking-accent-text">// SUBNETTING_FORMULAS</p>
                             <div class="columns is-multiline mono is-size-7 networking-text mt-2">
@@ -2269,7 +2364,7 @@
                             </div>
                         </div>
 
-                        <!-- 6. Practical Execution -->
+                        <!-- 9. Practical Execution -->
                         <div class="columns is-multiline">
                             <div class="column is-12 mb-2">
                                 <p class="is-size-6 mono fw-bold networking-accent-text">// PRACTICAL_SUBNETTING_SCENARIOS</p>
