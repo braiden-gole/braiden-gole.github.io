@@ -967,6 +967,11 @@ pre code.hljs {
     line-height: 1.2;
 }
 
+#diagrams {
+    text-align: left;
+    margin-left: 20px;
+}
+
 #resilient {
     color: var(--xbox-green) !important;
 }
