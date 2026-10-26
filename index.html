@@ -2511,6 +2511,46 @@
                                     </ul>
                                 </div>
                             </div>
+
+                            <!-- Example 8 -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_8: 10.50.12.100 /23</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
+                                        <li><strong>Mask:</strong> <code>255.255.254.0</code></li>
+                                        <li><strong>Block Size (3rd):</strong> <code>2</code> (Range: <code>12-13</code>)</li>
+                                        <li><strong>Binary Math:</strong> <code style="white-space: nowrap;">00001100 &amp; 11111110 = 00001100 (12)</code></li>
+                                        <li><strong>Target IP (.100):</strong> Falls in 3rd octet block <code>12-13</code>:
+                                            <ul class="mt-1 networking-inner-list">
+                                                <li><span class="has-text-success">Network ID:</span> <code>10.50.12.0</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>10.50.12.1</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>10.50.12.1</code> – <code>10.50.13.254</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>10.50.13.255</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Example 9 -->
+                            <div class="column is-12-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                                    <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_9: 192.168.5.88 /27</p>
+                                    <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
+                                        <li><strong>Mask:</strong> <code>255.255.255.224</code></li>
+                                        <li><strong>Block Size:</strong> <code>32</code> (Range: <code>64-95</code>)</li>
+                                        <li><strong>Binary Math:</strong> <code style="white-space: nowrap;">01011000 &amp; 11100000 = 01000000 (64)</code></li>
+                                        <li><strong>Target IP (.88):</strong> Falls in <code>64-95</code> block:
+                                            <ul class="mt-1 networking-inner-list">
+                                                <li><span class="has-text-success">Network ID:</span> <code>192.168.5.64</code></li>
+                                                <li><span class="has-text-primary fw-bold">Default Gateway:</span> <code>192.168.5.65</code></li>
+                                                <li><span class="has-text-info">Usable Range:</span> <code>.65</code> – <code>.94</code></li>
+                                                <li><span class="has-text-warning">Broadcast:</span> <code>192.168.5.95</code></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
