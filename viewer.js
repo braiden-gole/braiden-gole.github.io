@@ -15,7 +15,7 @@ class DiagramViewer {
         this.panY = 0
         
         // Define scale step rates and minimum/maximum boundaries for zoom operations.
-        this.scaleStep = 0.04
+        this.scaleStep = 0.015
         this.minScale = 0.05
         this.maxScale = 20
 
@@ -173,7 +173,7 @@ class DiagramViewer {
      * Registers DOM event listeners for mouse panning, touch dragging, zooming, navigation, and toolbar controls.
      */
     attachInteractionEventListeners() {
-        // Attach back button navigation listener to return to the diagrams section.
+        // Attach back button navigation listener to return to the designated section or next target ID.
         const backButton = document.getElementById('back-btn') || document.querySelector('.back-btn')
 
         if (backButton) {
@@ -181,7 +181,9 @@ class DiagramViewer {
                 event.preventDefault()
                 
                 const urlParameters = new URLSearchParams(window.location.search)
-                const targetSelection = urlParameters.get("from") || "diagrams"
+                const targetSelection = window.location.hash 
+                    ? window.location.hash.substring(1) 
+                    : (urlParameters.get("from") || "networking")
 
                 window.location.href = `index.html#${targetSelection}`
             })
@@ -307,7 +309,6 @@ class DiagramViewer {
      * Increases the current scale factor incrementally and updates the canvas matrix.
      */
     zoomIn() {
-        // Increment scale factor while observing maximum bounds.
         this.currentScale = Math.min(this.maxScale, this.currentScale + 0.1)
         this.updateTransformMatrix()
     }
@@ -316,7 +317,6 @@ class DiagramViewer {
      * Decreases the current scale factor incrementally and updates the canvas matrix.
      */
     zoomOut() {
-        // Decrement scale factor while observing minimum bounds.
         this.currentScale = Math.max(this.minScale, this.currentScale - 0.1)
         this.updateTransformMatrix()
     }
@@ -325,16 +325,13 @@ class DiagramViewer {
      * Resets pan offsets to center and computes optimal fitting scale for the SVG content.
      */
     resetZoomAndPan() {
-        // Reset translation coordinates to origin state.
         this.panX = 0
         this.panY = 0
 
-        // Ensure target container exists prior to measuring geometry.
         if (!this.contentElement) {
             return
         }
 
-        // Compute aspect scale ratio between viewport dimensions and SVG box dimensions.
         const svgElement = this.contentElement.querySelector('svg')
 
         if (svgElement && this.viewportElement) {
@@ -345,18 +342,15 @@ class DiagramViewer {
             let svgWidth = parseFloat(svgElement.style.width) || 800
             let svgHeight = parseFloat(svgElement.style.height) || 600
 
-            // Compute optimal scaling to keep whole height inside the screen bounds.
             const scaleX = (viewportWidth * 0.90) / svgWidth
             const scaleY = (viewportHeight * 0.90) / svgHeight
 
-            // Pick smaller scale factor so neither height nor width clip.
             this.currentScale = Math.min(scaleX, scaleY)
             this.currentScale = Math.max(this.minScale, Math.min(this.maxScale, this.currentScale))
         } else {
             this.currentScale = 1
         }
 
-        // Apply updated transformation state matrix.
         this.updateTransformMatrix()
     }
 
@@ -364,7 +358,6 @@ class DiagramViewer {
      * Applies the computed pan offsets and scale factor to the CSS transform matrix of the container.
      */
     updateTransformMatrix() {
-        // Apply CSS translation and scale transforms directly to the DOM element.
         if (this.contentElement) {
             this.contentElement.style.transform = `translate(calc(-50% + ${this.panX}px), calc(-50% + ${this.panY}px)) scale(${this.currentScale})`
         }
