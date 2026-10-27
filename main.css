@@ -1159,9 +1159,9 @@ pre code.hljs {
     }
 
     .terminal-header {
-        background: #f6f8fa !important;
+        background: #dce3ed !important;
         color: #24292e !important;
-        border-color: #d1d5db !important;
+        border-color: #cbd5e1 !important;
     }
 
     #repository-tree-container,
@@ -1169,9 +1169,9 @@ pre code.hljs {
     #golang-repository-tree-container,
     #under-the-hood-repository-tree-container,
     .code-box-mobile {
-        background: #ffffff !important;
-        color: #24292e !important;
-        border-color: #d1d5db !important;
+        background: #dce3ed !important;
+        color: #1f2328 !important;
+        border-color: #cbd5e1 !important;
     }
 
     #repository-tree-container a,
@@ -1183,14 +1183,14 @@ pre code.hljs {
     .python-tree-file-item,
     .golang-tree-file-item,
     .under-the-hood-tree-file-item {
-        color: #24292e !important;
+        color: #1f2328 !important;
     }
 
     #repository-tree-container span,
     #python-repository-tree-container span,
     #golang-repository-tree-container span,
     #under-the-hood-repository-tree-container span {
-        color: #586069 !important;
+        color: #57606a !important;
     }
 
     .tree-file-item:hover,
@@ -1200,17 +1200,62 @@ pre code.hljs {
     .golang-tree-file-item:hover,
     .under-the-hood-tree-file-item:hover {
         background-color: rgba(0, 0, 0, 0.05) !important;
-        color: #0366d6 !important;
+        color: #0969da !important;
     }
 
     .tree-file-item:hover *,
     a.tree-file-item:hover * {
-        color: #0366d6 !important;
+        color: #0969da !important;
     }
 
     .code-box-mobile code,
     pre code.hljs {
-        background: #ffffff !important;
+        background: #dce3ed !important;
+        color: #1f2328 !important;
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+        color: #57606a !important;
+        font-style: italic;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-subst {
+        color: #cf222e !important;
+        font-weight: 600;
+    }
+
+    .hljs-number,
+    .hljs-literal,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-tag .hljs-attr {
+        color: #0550ae !important;
+    }
+
+    .hljs-string,
+    .hljs-doctag {
+        color: #0a3069 !important;
+    }
+
+    .hljs-title,
+    .hljs-section,
+    .hljs-selector-id {
+        color: #8250df !important;
+        font-weight: 600;
+    }
+
+    .hljs-type,
+    .hljs-class .hljs-title {
+        color: #953800 !important;
+    }
+
+    .hljs-tag,
+    .hljs-name,
+    .hljs-attribute {
+        color: #116329 !important;
     }
 
     .footer {
