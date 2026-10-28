@@ -1,3 +1,6 @@
+/**
+ * Class representing an interactive SVG diagram viewer with pan, zoom, touch, and adaptive scaling capabilities.
+ */
 class DiagramViewer {
     /**
      * Initializes a new instance of the DiagramViewer class.
@@ -33,6 +36,7 @@ class DiagramViewer {
 
     /**
      * Initializes application state by parsing URL parameters and setting up event bindings.
+     * @returns {void}
      */
     initializeViewerApplication() {
         // Extract document source and title parameters from the browser query string.
@@ -70,6 +74,7 @@ class DiagramViewer {
     /**
      * Asynchronously fetches and processes an SVG document from a given URL.
      * @param {string} url - The relative or absolute path to the SVG asset.
+     * @returns {Promise<void>}
      */
     async loadSvgDocument(url) {
         // Validate the existence of the content container before attempting load operations.
@@ -104,6 +109,11 @@ class DiagramViewer {
                 // Set container background transparency.
                 svgElement.style.backgroundColor = 'transparent'
 
+                // Enforce hardware-accelerated vector rendering hints for high zoom crispness.
+                svgElement.style.shapeRendering = 'geometricPrecision'
+                svgElement.style.textRendering = 'geometricPrecision'
+                svgElement.style.imageRendering = 'optimizeQuality'
+
                 // Clear restricting dimensions to allow free fluid scaling.
                 svgElement.style.maxWidth = 'none'
                 svgElement.style.maxHeight = 'none'
@@ -132,6 +142,7 @@ class DiagramViewer {
                     if (bbox && bbox.width > 0 && bbox.height > 0) {
                         // Minimal padding around content to eliminate empty space margins.
                         const padding = 10
+
                         naturalWidth = Math.ceil(bbox.width + padding * 2)
                         naturalHeight = Math.ceil(bbox.height + padding * 2)
 
@@ -155,12 +166,17 @@ class DiagramViewer {
                     }
                 }
 
-                // Explicitly set calculated dimensions on both elements.
-                svgElement.style.width = `${naturalWidth}px`
-                svgElement.style.height = `${naturalHeight}px`
+                // HD Vector Density Factor: increases intrinsic render target resolution to avoid rasterization blur when scaling up.
+                const HD_DENSITY_FACTOR = 2
+                const renderWidth = naturalWidth * HD_DENSITY_FACTOR
+                const renderHeight = naturalHeight * HD_DENSITY_FACTOR
 
-                this.contentElement.style.width = `${naturalWidth}px`
-                this.contentElement.style.height = `${naturalHeight}px`
+                // Explicitly set calculated high-density dimensions on both elements.
+                svgElement.style.width = `${renderWidth}px`
+                svgElement.style.height = `${renderHeight}px`
+
+                this.contentElement.style.width = `${renderWidth}px`
+                this.contentElement.style.height = `${renderHeight}px`
             }
 
             // Schedule initial zoom and pan reset following DOM layout stabilization.
@@ -168,10 +184,9 @@ class DiagramViewer {
                 this.resetZoomAndPan()
             }, 50)
 
-            console.log("Successfully loaded Mermaid SVG with adaptive height container sizing.")
+            console.log("Successfully loaded Mermaid SVG with adaptive height container sizing and HD vector density.")
         } catch (error) {
             // Handle and display resource load failures gracefully in the viewport interface.
-            console.error('Failed to load SVG document:', error)
             if (this.contentElement) {
                 this.contentElement.innerHTML = `<p class="has-text-danger p-4">Error loading SVG file: ${error.message}</p>`
             }
@@ -179,16 +194,22 @@ class DiagramViewer {
     }
 
     /**
-     * Helper to calculate distance between two touch points for pinch-to-zoom.
+     * Calculates the Euclidean distance between two touch points for multi-touch pinch zooming.
+     * @param {TouchList} touches - The active touch points list from a TouchEvent.
+     * @returns {number} The distance between the first two touch points in pixels.
      */
     getPinchDistance(touches) {
-        const dx = touches[0].clientX - touches[1].clientX
-        const dy = touches[0].clientY - touches[1].clientY
-        return Math.sqrt(dx * dx + dy * dy)
+        // Calculate coordinate differences along X and Y axes.
+        const deltaX = touches[0].clientX - touches[1].clientX
+        const deltaY = touches[0].clientY - touches[1].clientY
+
+        // Return calculated hypotenuse distance.
+        return Math.sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
     /**
      * Registers DOM event listeners for mouse panning, touch dragging, zooming, navigation, and toolbar controls.
+     * @returns {void}
      */
     attachInteractionEventListeners() {
         // Attach back button navigation listener to return to the designated section or next target ID.
@@ -267,7 +288,6 @@ class DiagramViewer {
                 this.startX = event.touches[0].clientX - this.panX
                 this.startY = event.touches[0].clientY - this.panY
             } else if (event.touches.length === 2) {
-                // Switch from dragging to pinch zooming
                 this.isDragging = false
                 this.isPinching = true
                 this.initialPinchDistance = this.getPinchDistance(event.touches)
@@ -279,13 +299,17 @@ class DiagramViewer {
         window.addEventListener('touchmove', (event) => {
             if (event.touches.length === 2 && this.isPinching) {
                 event.preventDefault()
+
                 const currentDistance = this.getPinchDistance(event.touches)
+
                 if (this.initialPinchDistance > 0) {
                     const scaleFactor = currentDistance / this.initialPinchDistance
+
                     this.currentScale = Math.max(
                         this.minScale,
                         Math.min(this.maxScale, this.initialScaleBeforePinch * scaleFactor)
                     )
+
                     this.updateTransformMatrix()
                 }
             } else if (this.isDragging && event.touches.length === 1) {
@@ -301,10 +325,10 @@ class DiagramViewer {
             if (event.touches.length < 2) {
                 this.isPinching = false
             }
+
             if (event.touches.length === 0) {
                 this.isDragging = false
             } else if (event.touches.length === 1) {
-                // Fall back smoothly to single-finger drag if one finger is still down
                 this.isDragging = true
                 this.startX = event.touches[0].clientX - this.panX
                 this.startY = event.touches[0].clientY - this.panY
@@ -351,24 +375,34 @@ class DiagramViewer {
 
     /**
      * Increases the current scale factor incrementally and updates the canvas matrix.
+     * @returns {void}
      */
     zoomIn() {
+        // Compute new scale step bounded by max limit.
         this.currentScale = Math.min(this.maxScale, this.currentScale + 0.1)
+
+        // Apply updated transformation matrix.
         this.updateTransformMatrix()
     }
 
     /**
      * Decreases the current scale factor incrementally and updates the canvas matrix.
+     * @returns {void}
      */
     zoomOut() {
+        // Compute new scale step bounded by min limit.
         this.currentScale = Math.max(this.minScale, this.currentScale - 0.1)
+
+        // Apply updated transformation matrix.
         this.updateTransformMatrix()
     }
 
     /**
      * Resets pan offsets to center and computes optimal fitting scale for the SVG content.
+     * @returns {void}
      */
     resetZoomAndPan() {
+        // Reset translation coordinates to origin.
         this.panX = 0
         this.panY = 0
 
@@ -379,31 +413,36 @@ class DiagramViewer {
         const svgElement = this.contentElement.querySelector('svg')
 
         if (svgElement && this.viewportElement) {
+            // Retrieve container bounding dimensions.
             const viewportWidth = this.viewportElement.clientWidth || window.innerWidth
             const viewportHeight = this.viewportElement.clientHeight || window.innerHeight
 
             let svgWidth = parseFloat(svgElement.style.width) || 800
             let svgHeight = parseFloat(svgElement.style.height) || 600
 
-            // 0.85 padding ratio for optimal zoomed-out breathing room by default
+            // Apply 0.85 padding ratio for optimal zoomed-out breathing room by default.
             const paddingRatio = 0.85
             const scaleX = (viewportWidth * paddingRatio) / svgWidth
             const scaleY = (viewportHeight * paddingRatio) / svgHeight
 
+            // Calculate bounding scale factor.
             this.currentScale = Math.min(scaleX, scaleY)
             this.currentScale = Math.max(this.minScale, Math.min(this.maxScale, this.currentScale))
         } else {
             this.currentScale = 1
         }
 
+        // Apply reset transformation matrix.
         this.updateTransformMatrix()
     }
 
     /**
      * Applies the computed pan offsets and scale factor to the CSS transform matrix of the container.
+     * @returns {void}
      */
     updateTransformMatrix() {
         if (this.contentElement) {
+            // Transform element matrix using standard centered translation and scale values.
             this.contentElement.style.transform = `translate(calc(-50% + ${this.panX}px), calc(-50% + ${this.panY}px)) scale(${this.currentScale})`
         }
     }

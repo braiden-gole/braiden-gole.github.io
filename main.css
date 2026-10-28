@@ -992,6 +992,11 @@ pre code.hljs {
     color: var(--xbox-green) !important;
 }
 
+#svg-content {
+    will-change: transform;
+    transform-origin: center center;
+}
+
 @keyframes pulse-xbox-green {
     0% {
         box-shadow: 0 0 0 0 rgba(16, 124, 16, 0.5);
