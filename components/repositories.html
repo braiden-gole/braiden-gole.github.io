@@ -1,0 +1,221 @@
+<div id="code" class="code-anchor"></div>
+
+<article class="modern-tile accent-primary grid-full-width tile-border-top-green">
+    <div class="is-flex is-justify-content-space-between is-align-items-center flex-wrap mb-4 pb-3 px-4 px-3-mobile repo-header-border-green">
+        <div class="is-flex is-align-items-center">
+            <span class="icon has-text-success mr-3 is-size-4"><i class="fas fa-terminal"></i></span>
+            <div>
+                <h4 class="title is-5 mb-1">C Repository</h4>
+            </div>
+        </div>
+    </div>
+
+    <p class="is-size-6 mb-4 has-text-grey-light px-4 px-3-mobile">
+        <strong>Browse the repository directory layout below. Clicking any file will dynamically open
+            its contents in the viewer below.</strong>
+        <br>
+        <br />
+        <strong>The C Repository serves as a showcase of algorithmic design, emphasizing precision,
+            runtime performance, and foundational computer science principles.</strong>
+        <hr>
+    </p>
+
+    <div class="mb-4 px-2">
+        <div class="py-2 px-3 mb-2 repo-structure-header is-flex is-align-items-center">
+            <span class="mono is-size-7 is-flex is-align-items-center">
+                <i class="fas fa-folder-tree mr-2"></i> Repository Structure
+            </span>
+        </div>
+        <div id="repository-tree-container" class="mono is-size-7 terminal-body repo-tree-container-custom">
+        </div>
+    </div>
+
+    <div class="mb-0 code-viewer-wrapper" id="c-code-viewer">
+        <div class="is-flex is-justify-content-space-between is-align-items-center py-2 px-4 code-header-mobile terminal-header code-viewer-header-custom">
+            <span id="active-file-label"
+                class="mono is-size-7 has-text-primary is-flex is-align-items-center">
+                <i class="fas fa-file-code mr-2"></i> No file selected
+            </span>
+        </div>
+        <div class="mb-0 code-viewer-body">
+            <div class="code-box-mobile terminal-body">
+                <pre><code class="language-c" id="active-code-container">// Click a file from the repository structure above to view its full source code implementation here.</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <button class="tag button-reset mono is-size-6 mt-2 mt-0-tablet button is-fullwidth cursor-pointer" onclick="collapseAndClear()">
+        <span class="icon is-small">
+            <i class="fas fa-microchip"></i>
+        </span>
+        <span>collapse/clear</span>
+    </button>
+</article>
+
+<article class="modern-tile accent-warning grid-full-width tile-border-top-yellow">
+    <div class="is-flex is-justify-content-space-between is-align-items-center flex-wrap mb-4 pb-3 px-4 px-3-mobile repo-header-border-yellow">
+        <div class="is-flex is-align-items-center">
+            <span class="icon has-text-warning mr-3 is-size-4"><i class="fab fa-python"></i></span>
+            <div>
+                <h4 class="title is-5 mb-1">Python Repository</h4>
+            </div>
+        </div>
+    </div>
+
+    <p class="is-size-6 mb-4 has-text-grey-light px-4 px-3-mobile">
+        <strong>Browse the repository directory layout below. Clicking any file will dynamically open
+            its contents in the viewer below.</strong>
+        <br>
+        <br />
+        <strong>This collection leverages Python's expressiveness to dissect complex algorithms,
+            spanning dynamic programming, graph models, and optimized data structures. It provides a
+            clean, Pythonic blueprint for mastering high-level problem-solving strategies.</strong>
+        <hr>
+    </p>
+
+    <div class="mb-4 px-4 px-2-mobile">
+        <div class="py-2 px-3 mb-2 repo-structure-header is-flex is-align-items-center">
+            <span class="mono is-size-7 is-flex is-align-items-center">
+                <i class="fas fa-folder-tree mr-2"></i> Repository Structure
+            </span>
+        </div>
+        <div id="python-repository-tree-container" class="mono is-size-7 terminal-body repo-tree-container-custom">
+        </div>
+    </div>
+
+    <div class="mb-0 code-viewer-wrapper" id="python-code-viewer">
+        <div class="is-flex is-justify-content-space-between is-align-items-center py-2 px-4 code-header-mobile terminal-header code-viewer-header-custom">
+            <span id="python-active-file-label"
+                class="mono is-size-7 has-text-warning is-flex is-align-items-center">
+                <i class="fas fa-file-code mr-2"></i> No file selected
+            </span>
+        </div>
+        <div class="mb-0 code-viewer-body">
+            <div class="code-box-mobile terminal-body">
+                <pre><code class="language-python" id="python-active-code-container"># Click a file from the repository structure above to view its full source code implementation here.</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <button class="tag button-reset mono is-size-6 mt-2 mt-0-tablet button is-fullwidth cursor-pointer" onclick="collapseAndClearPython()">
+        <span class="icon is-small">
+            <i class="fab fa-python"></i>
+        </span>
+        <span>collapse/clear</span>
+    </button>
+</article>
+
+<article class="modern-tile accent-blue grid-full-width tile-border-top-blue">
+    <div class="is-flex is-justify-content-space-between is-align-items-center flex-wrap mb-4 pb-3 px-4 px-3-mobile repo-header-border-blue">
+        <div class="is-flex is-align-items-center">
+            <span class="icon has-text-info mr-3 is-size-4"><i class="fa-brands fa-golang"></i></span>
+            <div>
+                <h4 class="title is-5 mb-1">Golang Repository</h4>
+            </div>
+        </div>
+    </div>
+
+    <p class="is-size-6 mb-4 has-text-grey-light px-4 px-3-mobile">
+        <strong>Browse the repository directory layout below. Clicking any file will dynamically open
+            its contents in the viewer below.</strong>
+        <br>
+        <br />
+        <strong>Engineered for concurrency and scale, this Go repository showcases high-throughput
+            algorithms, parallel pipeline patterns, and robust state synchronization. It highlights how
+            modern, concurrent architectures solve data-heavy problems with minimal latency.</strong>
+        <hr>
+    </p>
+
+    <div class="mb-4 px-4 px-2-mobile">
+        <div class="py-2 px-3 mb-2 repo-structure-header is-flex is-align-items-center">
+            <span class="mono is-size-7 is-flex is-align-items-center">
+                <i class="fas fa-folder-tree mr-2"></i> Repository Structure
+            </span>
+        </div>
+        <div id="golang-repository-tree-container" class="mono is-size-7 terminal-body repo-tree-container-custom">
+        </div>
+    </div>
+
+    <div class="mb-0 code-viewer-wrapper" id="golang-code-viewer">
+        <div class="is-flex is-justify-content-space-between is-align-items-center py-2 px-4 code-header-mobile terminal-header code-viewer-header-custom">
+            <span id="golang-active-file-label"
+                class="mono is-size-7 has-text-info is-flex is-align-items-center">
+                <i class="fas fa-file-code mr-2"></i> No file selected
+            </span>
+        </div>
+        <div class="mb-0 code-viewer-body">
+            <div class="code-box-mobile terminal-body">
+                <pre><code class="language-go" id="golang-active-code-container">// Click a file from the repository structure above to view its full source code implementation here.</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <button class="tag button-reset mono is-size-6 mt-2 mt-0-tablet button is-fullwidth cursor-pointer" onclick="collapseAndClearGolang()">
+        <span class="icon is-small">
+            <i class="fa-brands fa-golang"></i>
+        </span>
+        <span>collapse/clear</span>
+    </button>
+</article>
+
+<article class="modern-tile accent-primary grid-full-width tile-border-top-green">
+    <div class="is-flex is-justify-content-space-between is-align-items-center flex-wrap mb-4 pb-3 px-4 px-3-mobile repo-header-border-green">
+        <div class="is-flex is-align-items-center">
+            <span class="icon has-text-success mr-3 is-size-4"><i class="fas fa-gear"></i></span>
+            <div>
+                <h4 class="title is-5 mb-1">Under The Hood ML Repository</h4>
+            </div>
+        </div>
+    </div>
+
+    <p class="is-size-6 mb-4 has-text-grey-light px-4 px-3-mobile">
+        <strong>Browse the repository directory layout below. Clicking any file will dynamically open
+            its contents in the viewer below.</strong>
+        <br>
+        <br />
+        <strong>Spanning seven programming languages, this repository dismantles machine learning down
+            to its bare-metal mechanics. By re-implementing core ML algorithms from scratch, it exposes
+            how mathematical foundations translate across paradigms delivering a deep, multi-language
+            masterclass in model architecture and low-level mechanics.</strong>
+        <hr>
+    </p>
+
+    <div class="mb-4 px-4 px-2-mobile">
+        <div class="py-2 px-3 mb-2 repo-structure-header is-flex is-align-items-center">
+            <span class="mono is-size-7 is-flex is-align-items-center">
+                <i class="fas fa-folder-tree mr-2"></i> Repository Structure
+            </span>
+        </div>
+        <div id="under-the-hood-repository-tree-container" class="mono is-size-7 terminal-body repo-tree-container-custom">
+        </div>
+    </div>
+
+    <div class="mb-0 code-viewer-wrapper" id="under-the-hood-code-viewer">
+        <div class="is-flex is-justify-content-space-between is-align-items-center py-2 px-4 code-header-mobile terminal-header code-viewer-header-custom">
+            <span id="under-the-hood-active-file-label"
+                class="mono is-size-7 has-text-success is-flex is-align-items-center">
+                <i class="fas fa-file-code mr-2"></i> No file selected
+            </span>
+        </div>
+        <div class="mb-0 code-viewer-body">
+            <div class="code-box-mobile terminal-body">
+                <pre><code class="language-plaintext" id="under-the-hood-active-code-container">// Click a file from the repository structure above to view its full source code implementation here.</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+    <button class="tag button-reset mono is-size-6 mt-2 mt-0-tablet button is-fullwidth cursor-pointer" onclick="collapseAndClearUnderTheHood()">
+        <span class="icon is-small">
+            <i class="fas fa-gear"></i>
+        </span>
+        <span>collapse/clear</span>
+    </button>
+</article>
