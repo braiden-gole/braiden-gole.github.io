@@ -2012,7 +2012,7 @@
                     <!-- Networking & Subnetting Section -->
                     <div id="networking" class="networking-anchor"></div>
 
-                     <article class="modern-tile grid-full-width networking-tile">
+                    <article class="modern-tile grid-full-width networking-tile">
                         <div class="is-flex is-justify-content-space-between is-align-items-center border-bottom-small pb-3 mb-4 flex-wrap">
                             <h3 class="title is-3 mb-0 networking-title">
                                 <span class="icon mx-4"><i class="fas fa-network-wired"></i></span>Networking
@@ -2028,14 +2028,14 @@
                         </p>
 
                         <!-- 1. Macro Architecture -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="packet-routing">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-1" id="packet-routing">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// PACKET_ROUTING_ENGINE</p>
                             <div class="is-flex is-flex-direction-column networking-gap">
                                 <p class="is-size-6 mb-0">
                                     Visualizing host-level decision engines, bitwise AND subnet matching, local ARP resolution, and Default Gateway routing paths.
                                 </p>
                                 <div class="is-flex is-justify-content-flex-end">
-                                    <a href="viewer.html?src=images/networking-packet-routing.svg&title=Packet%20Routing%20Architecture&from=networking#osi-tcpip-models" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                    <a href="viewer.html?src=images/networking-packet-routing.svg&title=Packet%20Routing%20Architecture&from=networking#osi-tcpip-models" class="button is-small networking-btn">
                                         <span class="icon is-small mr-1">
                                             <i class="fas fa-external-link-alt"></i>
                                         </span>
@@ -2048,7 +2048,7 @@
                         <hr>
 
                         <!-- 2. Network Stack Theory -->
-                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5" id="osi-tcpip-models">
+                        <div class="box bg-deep p-4 h-100 networking-sub-box net-box-2 mb-5" id="osi-tcpip-models">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// OSI_AND_TCP_IP_MODELS</p>
                             <div class="table-container">
                                 <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
@@ -2116,7 +2116,7 @@
                         <hr>
 
                         <!-- 3. DNS Resolution Pipeline & DNSSEC -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="dns-resolution">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-3" id="dns-resolution">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// DNS_RESOLUTION_PIPELINE & SECURITY</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2142,7 +2142,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/dns-resolution-pipelines.svg&title=DNS%20Resolution%20Pipeline&from=networking#tcp-sockets" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/dns-resolution-pipelines.svg&title=DNS%20Resolution%20Pipeline&from=networking#tcp-sockets" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2154,7 +2154,7 @@
                         <hr>
 
                         <!-- 4. Protocol Mechanics: TCP & Sockets -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="tcp-sockets">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-4" id="tcp-sockets">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// TCP_LIFECYCLE, FLOW CONTROL & SOCKETS</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2183,7 +2183,7 @@
                         <hr>
 
                         <!-- 5. QUIC & HTTP/3 Modern Transport -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="quic-transport">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-5" id="quic-transport">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// QUIC_AND_HTTP3_TRANSPORT</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-4-desktop">
@@ -2206,7 +2206,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/quic-http-3.svg&title=QUIC%20and%20HTTP/3%20Transport&from=networking#nat-traversal" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/quic-http-3.svg&title=QUIC%20and%20HTTP/3%20Transport&from=networking#nat-traversal" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2218,7 +2218,7 @@
                         <hr>
 
                         <!-- 6. NAT Traversal, ICE & STUN/TURN -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="nat-traversal">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-6" id="nat-traversal">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// NAT_TRAVERSAL_ICE_STUN_TURN</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2242,7 +2242,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/ice-candidate-gathering-stun-binding-and-turn-relay-fallback.svg&title=ICE%20Candidate%20Gathering,%20STUN%20Binding%20and%20TURN%20Relay%20Fallback&from=networking#ipv4-address-classes" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/ice-candidate-gathering-stun-binding-and-turn-relay-fallback.svg&title=ICE%20Candidate%20Gathering,%20STUN%20Binding%20and%20TURN%20Relay%20Fallback&from=networking#ipv4-address-classes" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2259,7 +2259,7 @@
                                 <p class="is-size-6 mono fw-bold networking-accent-text">// IPV4_ADDRESS_CLASSES</p>
                             </div>
                             <div class="column is-12-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-7">
                                     <div class="table-container">
                                         <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
                                             <thead>
@@ -2323,7 +2323,7 @@
                         <hr>
 
                         <!-- Private IP Ranges & Special Addresses -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="private-ip-ranges">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-8" id="private-ip-ranges">
                             <p class="is-size-6 mono mb-2 fw-bold networking-accent-text">// PRIVATE_IP_RANGES</p>
                             <div class="columns is-multiline mono is-size-7 networking-text mt-2">
                                 <div class="column is-12-tablet is-4-desktop">
@@ -2367,7 +2367,7 @@
                         <hr>
 
                         <!-- 8. Math & Formulas -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="subnetting-formulas">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-9" id="subnetting-formulas">
                             <p class="is-size-6 mono mb-2 fw-bold networking-accent-text">// SUBNETTING_FORMULAS</p>
                             <div class="columns is-multiline mono is-size-7 networking-text mt-2">
                                 <div class="column is-6-tablet is-3-desktop">
@@ -2403,7 +2403,7 @@
                         <hr>
 
                         <!-- CIDR Quick Reference Table -->
-                        <div class="box bg-deep p-4 h-100 networking-sub-box mb-5" id="cidr-reference">
+                        <div class="box bg-deep p-4 h-100 networking-sub-box net-box-10 mb-5" id="cidr-reference">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// CIDR_AND_SUBNET_MASK_REFERENCE</p>
                             <div class="table-container">
                                 <table class="table is-fullwidth is-narrow mono is-size-7 networking-table">
@@ -2480,8 +2480,8 @@
                             </div>
 
                             <!-- Example 1 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-1 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_1: 192.168.10.67 /26</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.192</code></li>
@@ -2500,8 +2500,8 @@
                             </div>
 
                             <!-- Example 2 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-2 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_2: 10.20.30.145 /28</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.240</code></li>
@@ -2520,8 +2520,8 @@
                             </div>
 
                             <!-- Example 3 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-3 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_3: 172.16.50.200 /22</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.252.0</code></li>
@@ -2540,8 +2540,8 @@
                             </div>
 
                             <!-- Example 4 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-4 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_4: 192.168.1.130 /25</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.128</code></li>
@@ -2560,8 +2560,8 @@
                             </div>
 
                             <!-- Example 5 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-5 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_5: 10.0.5.42 /29</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.248</code></li>
@@ -2580,8 +2580,8 @@
                             </div>
 
                             <!-- Example 6 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-6 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_6: 172.20.100.15 /27</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.224</code></li>
@@ -2600,8 +2600,8 @@
                             </div>
 
                             <!-- Example 7 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-7 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_7: 192.168.100.220 /30</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.252</code></li>
@@ -2620,8 +2620,8 @@
                             </div>
 
                             <!-- Example 8 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-8 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_8: 10.50.12.100 /23</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.254.0</code></li>
@@ -2640,8 +2640,8 @@
                             </div>
 
                             <!-- Example 9 -->
-                            <div class="column is-12-tablet is-4-desktop mb-4">
-                                <div class="box bg-deep p-4 h-100 networking-sub-box networking-example-box">
+                            <div class="column is-12-mobile is-6-tablet is-4-desktop mb-4">
+                                <div class="box bg-deep p-4 h-100 networking-sub-box net-box-9 networking-example-box">
                                     <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// EXAMPLE_9: 192.168.5.88 /27</p>
                                     <ul class="mono is-size-7 networking-text pl-3 networking-sublist">
                                         <li><strong>Mask:</strong> <code>255.255.255.224</code></li>
@@ -2663,7 +2663,7 @@
                         <hr>
 
                         <!-- 10. IPv6 Architecture & NDP -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="ipv6-ndp">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-10" id="ipv6-ndp">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// IPV6_ARCHITECTURE_AND_NDP</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2688,7 +2688,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/ipv6-architecture_and_ndp.svg&title=IPv6%20Architecture%20and%20NDP&from=networking#bgp-ospf" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/ipv6-architecture_and_ndp.svg&title=IPv6%20Architecture%20and%20NDP&from=networking#bgp-ospf" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2700,7 +2700,7 @@
                         <hr>
 
                         <!-- 11. Autonomous Systems & Routing Protocols -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="bgp-ospf">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-1" id="bgp-ospf">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// BGP_AND_OSPF_ROUTING_PROTOCOLS</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2725,7 +2725,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/bgp-and-ospf-routing-protocols.svg&title=BGP%20and%20OSPF%20Routing%20Protocols&from=networking#tls-ech" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/bgp-and-ospf-routing-protocols.svg&title=BGP%20and%20OSPF%20Routing%20Protocols&from=networking#tls-ech" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2737,7 +2737,7 @@
                         <hr>
 
                         <!-- 12. Transport Security & ECH -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="tls-ech">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-2" id="tls-ech">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// TLS1.3_AND_ENCRYPTED_CLIENT</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2760,7 +2760,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/tls-1.3-and-encrypted-client.svg&title=TLS%201.3%20and%20Encrypted%20Client%20Hello&from=networking#websockets-sse" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/tls-1.3-and-encrypted-client.svg&title=TLS%201.3%20and%20Encrypted%20Client%20Hello&from=networking#websockets-sse" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2772,7 +2772,7 @@
                         <hr>
 
                         <!-- 13. Real-Time Web Protocols -->
-                        <div class="box bg-deep border-accent p-4 mb-5 networking-sub-box" id="websockets-sse">
+                        <div class="box bg-deep p-4 mb-5 networking-sub-box net-box-3" id="websockets-sse">
                             <p class="is-size-6 mono mb-3 fw-bold networking-accent-text">// WEBSOCKETS_AND_SSE_TRANSPORT</p>
                             <div class="columns is-multiline mono is-size-7 networking-text">
                                 <div class="column is-12-tablet is-6-desktop">
@@ -2795,7 +2795,7 @@
                                 </div>
                             </div>
                             <div class="is-flex is-justify-content-flex-end mt-4">
-                                <a href="viewer.html?src=images/websockets-and-sse-transport.svg&title=WebSockets%20and%20SSE%20Transport&from=networking#websockets-sse" target="_blank" rel="noopener noreferrer" class="button is-small networking-btn">
+                                <a href="viewer.html?src=images/websockets-and-sse-transport.svg&title=WebSockets%20and%20SSE%20Transport&from=networking#websockets-sse" class="button is-small networking-btn">
                                     <span class="icon is-small mr-1">
                                         <i class="fas fa-external-link-alt"></i>
                                     </span>
@@ -2809,8 +2809,8 @@
 
                     <article class="modern-tile accent-orange grid-full-width security-anchor tile-border-left-orange tile-shadow-orange" id="security">
                         <div class="is-flex is-justify-content-space-between is-align-items-center mb-4 flex-wrap">
-                            <h3 class="title is-3 mb-0 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                <span class="icon mr-3" style="color: #ff9900 !important;"><i class="fas fa-shield-halved"></i></span>
+                            <h3 class="title is-3 mb-0 is-flex is-align-items-center security-title">
+                                <span class="icon mr-3 security-icon"><i class="fas fa-shield-halved"></i></span>
                                 Security
                             </h3>
                         </div>
@@ -2822,10 +2822,10 @@
                         <div class="columns is-multiline mb-4">
                             <!-- Column 1: Input Validation & Injection Prevention -->
                             <div class="column is-12-mobile is-6-tablet" id="input-validation">
-                                <div class="box h-100 p-4 def-box-green is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-1 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-terminal"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-terminal"></i></span>
                                             Input Validation & Injection Defense
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2838,9 +2838,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/input-validation-and-injection-defense.svg&amp;title=Input%20Validation%20%26%20Injection%20Defense&amp;from=security#cryptographic-primitives" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/input-validation-and-injection-defense.svg&amp;title=Input%20Validation%20%26%20Injection%20Defense&amp;from=security#cryptographic-primitives-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2848,10 +2848,10 @@
 
                             <!-- Column 2: Authentication & Cryptography -->
                             <div class="column is-12-mobile is-6-tablet" id="cryptographic-primitives">
-                                <div class="box h-100 p-4 def-box-blue is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-2 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-key"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="cryptographic-primitives-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-key"></i></span>
                                             Cryptographic Primitives & Identity
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2864,9 +2864,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/cryptographic-primitives-and-identity.svg&amp;title=Cryptographic%20Primitives%20%26%20Identity&amp;from=security#memory-safety" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/cryptographic-primitives-and-identity.svg&amp;title=Cryptographic%20Primitives%20%26%20Identity&amp;from=security#memory-safety-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2874,10 +2874,10 @@
 
                             <!-- Column 3: Memory Safety & Low-Level Hardening -->
                             <div class="column is-12-mobile is-6-tablet" id="memory-safety">
-                                <div class="box h-100 p-4 def-box-yellow is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-3 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-microchip"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="memory-safety-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-microchip"></i></span>
                                             Memory Safety & Binary Hardening
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2890,9 +2890,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/memory-safety-and-binary-hardening.svg&amp;title=Memory%20Safety%20%26%20Binary%20Hardening&amp;from=security#api-hardening" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/memory-safety-and-binary-hardening.svg&amp;title=Memory%20Safety%20%26%20Binary%20Hardening&amp;from=security#api-hardening-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2900,10 +2900,10 @@
 
                             <!-- Column 4: API Hardening & Rate Limiting -->
                             <div class="column is-12-mobile is-6-tablet" id="api-hardening">
-                                <div class="box h-100 p-4 def-box-red is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-4 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-network-wired"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="api-hardening-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-network-wired"></i></span>
                                             API Hardening & Rate Limiting
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2916,9 +2916,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/api-hardening-and-rate-limiting.svg&amp;title=API%20Hardening%20%26%20Rate%20Limiting&amp;from=security#supply-chain" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/api-hardening-and-rate-limiting.svg&amp;title=API%20Hardening%20%26%20Rate%20Limiting&amp;from=security#supply-chain-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2926,10 +2926,10 @@
 
                             <!-- Column 5: Software Supply Chain & Dependency Integrity -->
                             <div class="column is-12-mobile is-6-tablet" id="supply-chain">
-                                <div class="box h-100 p-4 def-box-purple is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-5 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-boxes-packing"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="supply-chain-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-boxes-packing"></i></span>
                                             Software Supply Chain & Artifact Integrity
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2942,9 +2942,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/software-supply-chain-and-artifact-integrity.svg&amp;title=Software%20Supply%20Chain%20%26%20Artifact%20Integrity&amp;from=security#sandbox-isolation" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/software-supply-chain-and-artifact-integrity.svg&amp;title=Software%20Supply%20Chain%20%26%20Artifact%20Integrity&amp;from=security#sandbox-isolation-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2952,10 +2952,10 @@
 
                             <!-- Column 6: Container Isolation & Runtime Sandbox Security -->
                             <div class="column is-12-mobile is-6-tablet" id="sandbox-isolation">
-                                <div class="box h-100 p-4 def-box-cyan is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-6 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-box-archive"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="sandbox-isolation-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-box-archive"></i></span>
                                             Container Isolation & Runtime Sandboxing
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2968,9 +2968,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/container-isolation-and-runtime-sandboxing.svg&amp;title=Container%20Isolation%20%26%20Sandboxing&amp;from=security#app-sec" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/container-isolation-and-runtime-sandboxing.svg&amp;title=Container%20Isolation%20%26%20Sandboxing&amp;from=security#app-sec-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -2978,10 +2978,10 @@
 
                             <!-- Column 7: Web Application Security & Session Management -->
                             <div class="column is-12-mobile is-6-tablet" id="app-sec">
-                                <div class="box h-100 p-4 def-box-orange is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-7 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-globe"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="app-sec-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-globe"></i></span>
                                             Web Application Security & Sessions
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -2994,9 +2994,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/web-application-security-and-sessions.svg&amp;title=Web%20Application%20Security%20%26%20Sessions&amp;from=security#identity-federation" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/web-application-security-and-sessions.svg&amp;title=Web%20Application%20Security%20%26%20Sessions&amp;from=security#identity-federation-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -3004,10 +3004,10 @@
 
                             <!-- Column 8: Identity Federation & Access Protocols -->
                             <div class="column is-12-mobile is-6-tablet" id="identity-federation">
-                                <div class="box h-100 p-4 def-box-indigo is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-8 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-fingerprint"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="identity-federation-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-fingerprint"></i></span>
                                             Identity Federation & Access Protocols
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -3020,9 +3020,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/identity-federation-and-access-protocols.svg&amp;title=Identity%20Federation%20%26%20Access%20Protocols&amp;from=security#secrets-management" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/identity-federation-and-access-protocols.svg&amp;title=Identity%20Federation%20%26%20Access%20Protocols&amp;from=security#secrets-management-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -3030,10 +3030,10 @@
 
                             <!-- Column 9: Secrets Management & KMS Architecture -->
                             <div class="column is-12-mobile is-6-tablet" id="secrets-management">
-                                <div class="box h-100 p-4 def-box-teal is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-9 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-vault"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="secrets-management-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-vault"></i></span>
                                             Secrets Management & KMS Architecture
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -3046,9 +3046,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/secrets-management-and-kms-architecture.svg&amp;title=Secrets%20Management%20%26%20KMS%20Architecture&amp;from=security#infrastructure-security" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/secrets-management-and-kms-architecture.svg&amp;title=Secrets%20Management%20%26%20KMS%20Architecture&amp;from=security#infrastructure-security-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -3056,10 +3056,10 @@
 
                             <!-- Column 10: Infrastructure Security & Cloud Hardening -->
                             <div class="column is-12-mobile is-6-tablet" id="infrastructure-security">
-                                <div class="box h-100 p-4 def-box-pink is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                <div class="box h-100 p-4 def-box-10 is-flex is-flex-direction-column is-justify-content-space-between security-box">
                                     <div>
-                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-server"></i></span>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="infrastructure-security-title">
+                                            <span class="icon mr-2 security-icon"><i class="fas fa-server"></i></span>
                                             Infrastructure Security & Cloud Hardening
                                         </h5>
                                         <p class="is-size-7 has-text-grey-light mb-3">
@@ -3072,9 +3072,9 @@
                                         </div>
                                     </div>
                                     <div class="is-flex is-justify-content-flex-end">
-                                        <a href="viewer.html?src=images/infrastructure-security-and-cloud-hardening.svg&amp;title=Infrastructure%20Security%20%26%20Cloud%20Hardening&amp;from=security#zero-trust-pipeline" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
-                                            <span>View Diagram</span>
-                                            <span class="icon is-small ml-1"><i class="fas fa-external-link-alt"></i></span>
+                                        <a href="viewer.html?src=images/infrastructure-security-and-cloud-hardening.svg&amp;title=Infrastructure%20Security%20%26%20Cloud%20Hardening&amp;from=security#zero-trust-pipeline-title" class="button is-small security-diagram-btn">
+                                            <span class="icon is-small mr-1"><i class="fas fa-external-link-alt has-text-white"></i></span>
+                                            <span class="has-text-white">View Diagram</span>
                                         </a>
                                     </div>
                                 </div>
@@ -3082,9 +3082,9 @@
                         </div>
 
                         <!-- Threat Modeling & Architecture Callout -->
-                        <div class="box p-4 mb-4" id="zero-trust-pipeline" style="background-color: rgba(255, 153, 0, 0.04); border-left: 3px solid #ff9900;">
-                            <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
-                                <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-project-diagram"></i></span>
+                        <div class="box p-4 mb-4 security-callout" id="zero-trust-pipeline">
+                            <h5 class="title is-5 mb-2 is-flex is-align-items-center security-heading" id="zero-trust-pipeline-title">
+                                <span class="icon mr-2 security-icon"><i class="fas fa-project-diagram"></i></span>
                                 Zero Trust Architecture & Defense-in-Depth Pipeline
                             </h5>
                             <p class="is-size-7 has-text-grey-light mb-0">

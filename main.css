@@ -997,6 +997,32 @@ pre code.hljs {
     transform-origin: center center;
 }
 
+.security-anchor .security-title,
+.security-anchor .security-heading,
+.security-anchor .security-icon {
+    color: #ff9900 !important;
+}
+
+.security-anchor .security-box {
+    background-color: var(--card-bg) !important;
+}
+
+.security-anchor .security-heading {
+    scroll-margin-top: 100px;
+}
+
+.security-anchor .security-diagram-btn {
+    background-color: #ff9900 !important;
+    color: #000000 !important;
+    border: none !important;
+    font-weight: bold !important;
+}
+
+.security-anchor .security-callout {
+    background-color: rgba(255, 153, 0, 0.04) !important;
+    border-left: 3px solid #ff9900 !important;
+}
+
 @keyframes pulse-xbox-green {
     0% {
         box-shadow: 0 0 0 0 rgba(16, 124, 16, 0.5);
