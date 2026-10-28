@@ -46,7 +46,7 @@
 
             <div class="hero-body relative-z">
                 <div class="container">
-                    <div class="columns is-vcentered">
+                    <div class="columns is-vcentered mb-5">
                         <div class="column is-7">
                             <div class="columns is-vcentered is-mobile mb-2">
                                 <div class="column is-narrow">
@@ -93,7 +93,6 @@
 
                         <div class="column is-4 is-offset-1">
                             <div class="box status-box p-3">
-
                                 <div class="is-flex is-justify-content-space-between is-align-items-center mb-3 pb-2 status-box-header">
                                     <div class="is-flex is-align-items-center">
                                         <span class="has-text-success mr-2 status-dot">●</span>
@@ -115,31 +114,53 @@
             </div>
         </section>
 
-        <section class="section bg-deep">
-            <div class="container">
-                <div class="columns is-centered mb-5">
-                    <div class="column is-12-mobile is-10-tablet is-8-desktop">
-                        <div class="is-flex is-flex-direction-column is-flex-direction-row-tablet is-justify-content-center is-align-items-stretch nav-button-container">
-                            <a href="#code" class="button is-warning is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
-                                <span class="icon"><i class="fas fa-terminal"></i></span>
-                                <span>Code Repositories</span>
-                            </a>
-                            <a href="#art" class="button is-info is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
-                                <span class="icon"><i class="fas fa-palette"></i></span>
-                                <span>Digital Art</span>
-                            </a>
-                            <a href="#diagrams" class="button is-success is-outlined mono is-size-7 py-3 px-4 is-flex-grow-1">
-                                <span class="icon"><i class="fas fa-sitemap"></i></span>
-                                <span>Diagrams</span>
-                            </a>
-                            <a href="#networking" class="button networking-nav-btn mono is-size-7 py-3 px-4 is-flex-grow-1">
-                                <span class="icon"><i class="fas fa-network-wired"></i></span>
-                                <span>Networking</span>
-                            </a>
+        <hr>
+
+        <div class="container my-5">
+            <div class="columns">
+                <div class="column has-text-centered">
+                    <div class="dropdown is-hoverable nav-dropdown-wrapper">
+                        <div class="dropdown-trigger">
+                            <button class="button mono is-size-6 py-3 px-5" aria-haspopup="true" aria-controls="navigation-menu">
+                                <span class="icon"><i class="fas fa-compass"></i></span>
+                                <span class="fw-bold">Quick Navigation</span>
+                                <span class="icon is-small ml-2">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="dropdown-menu" id="navigation-menu" role="menu" style="width:100%;">
+                            <!-- Added has-text-left here -->
+                            <div class="dropdown-content has-text-left">
+                                <a href="#code" class="dropdown-item mono is-size-7 py-2 px-4">
+                                    <span class="icon mr-2"><i class="fas fa-terminal"></i></span>
+                                    <span>Code Repositories</span>
+                                </a>
+                                <a href="#art" class="dropdown-item mono is-size-7 py-2 px-4">
+                                    <span class="icon mr-2"><i class="fas fa-palette"></i></span>
+                                    <span>Digital Art</span>
+                                </a>
+                                <a href="#diagrams" class="dropdown-item xbox-dropdown-item mono is-size-7 py-2 px-4">
+                                    <span class="icon mr-2"><i class="fas fa-sitemap"></i></span>
+                                    <span>Diagrams</span>
+                                </a>
+                                <a href="#networking" class="dropdown-item xbox-dropdown-item mono is-size-7 py-2 px-4">
+                                    <span class="icon mr-2"><i class="fas fa-network-wired"></i></span>
+                                    <span>Networking</span>
+                                </a>
+                                <a href="#security" class="dropdown-item xbox-dropdown-item mono is-size-7 py-2 px-4">
+                                    <span class="icon mr-2"><i class="fas fa-shield-halved"></i></span>
+                                    <span>Security</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
+        <section class="section bg-deep">
+            <div class="container">
                 <div class="portfolio-grid">
                     <div class="main-content-stack">
                         <article class="modern-tile grid-full-width conestoga-tile">
@@ -2757,6 +2778,138 @@
                                     <span>View Diagram</span>
                                 </a>
                             </div>
+                        </div>
+                    </article>
+
+                    <div id="security" class="code-anchor"></div>
+
+                    <article class="modern-tile accent-orange grid-full-width security-anchor tile-border-left-orange tile-shadow-orange" id="security">
+                        <div class="is-flex is-justify-content-space-between is-align-items-center mb-4 flex-wrap">
+                            <h3 class="title is-3 mb-0 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                <span class="icon mr-3" style="color: #ff9900 !important;"><i class="fas fa-shield-halved"></i></span>
+                                Security
+                            </h3>
+                        </div>
+
+                        <p class="subtitle is-6 has-text-grey-light mb-5">
+                            Engineering resilient systems by treating security as a foundational architectural constraint rather than a post-deployment patch—focusing on cryptographic integrity, memory-safety hardening, and strict adversarial threat modeling.
+                        </p>
+
+                        <div class="columns is-multiline mb-4">
+                            <!-- Column 1: Input Validation & Injection Prevention -->
+                            <div class="column is-12-mobile is-6-tablet" id="input-validation">
+                                <div class="box h-100 p-4 def-box-green is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                    <div>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-terminal"></i></span>
+                                            Input Validation & Injection Defense
+                                        </h5>
+                                        <p class="is-size-7 has-text-grey-light mb-3">
+                                            Mitigating OWASP Top 10 vulnerabilities at the algorithmic layer through strict typing, allow-listing, parameterized queries, and robust payload sanitization protocols.
+                                        </p>
+                                        <div class="tags mb-4">
+                                            <span class="tag is-dark mono is-size-7">SQLi Mitigation</span>
+                                            <span class="tag is-dark mono is-size-7">XSS & Deserialization</span>
+                                            <span class="tag is-dark mono is-size-7">Strict Allow-listing</span>
+                                        </div>
+                                    </div>
+                                    <div class="is-flex is-justify-content-flex-end">
+                                        <a href="viewer.html?src=images/input-validation-and-injection-defense.svg&amp;title=Input%20Validation%20%26%20Injection%20Defense&amp;from=security#cryptographic-primitives" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
+                                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: Authentication & Cryptography -->
+                            <div class="column is-12-mobile is-6-tablet" id="cryptographic-primitives">
+                                <div class="box h-100 p-4 def-box-blue is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                    <div>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-key"></i></span>
+                                            Cryptographic Primitives & Identity
+                                        </h5>
+                                        <p class="is-size-7 has-text-grey-light mb-3">
+                                            Implementing authenticated encryption (AES-GCM, ChaCha20-Poly1305), modern key derivation (Argon2id, bcrypt), and mutual TLS (mTLS) session verification.
+                                        </p>
+                                        <div class="tags mb-4">
+                                            <span class="tag is-dark mono is-size-7">AES-GCM & Ed25519</span>
+                                            <span class="tag is-dark mono is-size-7">Argon2id & Salting</span>
+                                            <span class="tag is-dark mono is-size-7">Mutual TLS (mTLS)</span>
+                                        </div>
+                                    </div>
+                                    <div class="is-flex is-justify-content-flex-end">
+                                        <a href="viewer.html?src=images/cryptographic-primitives-and-identity.svg&amp;title=Cryptographic%20Primitives%20%26%20Identity&amp;from=security#memory-safety" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
+                                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 3: Memory Safety & Low-Level Hardening -->
+                            <div class="column is-12-mobile is-6-tablet" id="memory-safety">
+                                <div class="box h-100 p-4 def-box-yellow is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                    <div>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-microchip"></i></span>
+                                            Memory Safety & Binary Hardening
+                                        </h5>
+                                        <p class="is-size-7 has-text-grey-light mb-3">
+                                            Enforcing hardware and OS-level protections against buffer overflows, use-after-free, and arbitrary code execution vectors in native runtimes.
+                                        </p>
+                                        <div class="tags mb-4">
+                                            <span class="tag is-dark mono is-size-7">ASLR & DEP/NX</span>
+                                            <span class="tag is-dark mono is-size-7">Stack Canaries</span>
+                                            <span class="tag is-dark mono is-size-7">AddressSanitizer</span>
+                                        </div>
+                                    </div>
+                                    <div class="is-flex is-justify-content-flex-end">
+                                        <a href="viewer.html?src=images/memory-safety-and-binary-hardening.svg&amp;title=Memory%20Safety%20%26%20Binary%20Hardening&amp;from=security#api-hardening" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
+                                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 4: API Hardening & Rate Limiting -->
+                            <div class="column is-12-mobile is-6-tablet" id="api-hardening">
+                                <div class="box h-100 p-4 def-box-red is-flex is-flex-direction-column is-justify-content-space-between" style="background-color: var(--card-bg);">
+                                    <div>
+                                        <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                            <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-network-wired"></i></span>
+                                            API Hardening & Rate Limiting
+                                        </h5>
+                                        <p class="is-size-7 has-text-grey-light mb-3">
+                                            Deploying distributed token-bucket rate limiters, secure HTTP response headers (CSP, CORS, HSTS), and least-privilege RBAC permission hierarchies.
+                                        </p>
+                                        <div class="tags mb-4">
+                                            <span class="tag is-dark mono is-size-7">Token Bucket Rate Limiting</span>
+                                            <span class="tag is-dark mono is-size-7">CSP & CORS Enforcement</span>
+                                            <span class="tag is-dark mono is-size-7">Least Privilege RBAC</span>
+                                        </div>
+                                    </div>
+                                    <div class="is-flex is-justify-content-flex-end">
+                                        <a href="viewer.html?src=images/api-hardening-and-rate-limiting.svg&amp;title=API%20Hardening%20%26%20Rate%20Limiting&amp;from=security#security" target="_blank" rel="noopener noreferrer" class="button is-small" style="background-color: #ff9900; color: #000000; border: none; font-weight: bold;">
+                                            <span class="icon"><i class="fas fa-external-link-alt"></i></span>
+                                            <span>View</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Threat Modeling & Architecture Callout -->
+                        <div class="box p-4 mb-4" style="background-color: rgba(255, 153, 0, 0.04); border-left: 3px solid #ff9900;">
+                            <h5 class="title is-5 mb-2 is-flex is-align-items-center" style="color: #ff9900 !important;">
+                                <span class="icon mr-2" style="color: #ff9900 !important;"><i class="fas fa-project-diagram"></i></span>
+                                Zero Trust Architecture & Defense-in-Depth Pipeline
+                            </h5>
+                            <p class="is-size-7 has-text-grey-light mb-0">
+                                Applying defense-in-depth across service boundaries. Every incoming packet, session token, and internal API transaction undergoes continuous cryptographic validation, strict schema verification, and context-aware authorization checks regardless of network origin. Systems are built to fail securely, maintain strict state segregation, and block adversarial enumeration attempts via proactive rate-limiting and obfuscated error handling.
+                            </p>
                         </div>
                     </article>
                 </div>

@@ -19,10 +19,13 @@ class DiagramViewer {
         this.minScale = 0.05
         this.maxScale = 20
 
-        // Initialize state variables for tracking active drag interactions.
+        // Initialize state variables for tracking active drag and pinch interactions.
         this.isDragging = false
+        this.isPinching = false
         this.startX = 0
         this.startY = 0
+        this.initialPinchDistance = 0
+        this.initialScaleBeforePinch = 1
 
         // Execute initial application setup and event binding.
         this.initializeViewerApplication()
@@ -96,7 +99,7 @@ class DiagramViewer {
                 // Remove Mermaid's hardcoded background rectangles to reveal transparent page styling.
                 const bgElements = svgElement.querySelectorAll('rect.background, rect[width="100%"][height="100%"]')
 
-                bgElements.forEach((rect) => rect.remove())
+                bgElements.forEach((rectangle) => rectangle.remove())
 
                 // Set container background transparency.
                 svgElement.style.backgroundColor = 'transparent'
@@ -127,9 +130,16 @@ class DiagramViewer {
                     const bbox = svgElement.getBBox()
 
                     if (bbox && bbox.width > 0 && bbox.height > 0) {
-                        // Add padding factor to account for strokes & marker arrows.
-                        naturalWidth = Math.ceil(bbox.width + bbox.x * 2 + 40)
-                        naturalHeight = Math.ceil(bbox.height + bbox.y * 2 + 40)
+                        // Minimal padding around content to eliminate empty space margins.
+                        const padding = 10
+                        naturalWidth = Math.ceil(bbox.width + padding * 2)
+                        naturalHeight = Math.ceil(bbox.height + padding * 2)
+
+                        // Set the viewBox explicitly to fit the exact bounding box bounds.
+                        svgElement.setAttribute(
+                            'viewBox',
+                            `${bbox.x - padding} ${bbox.y - padding} ${naturalWidth} ${naturalHeight}`
+                        )
                     }
                 } catch (error) {
                     // Fallback to viewBox parsing if getBBox is unavailable.
@@ -146,7 +156,6 @@ class DiagramViewer {
                 }
 
                 // Explicitly set calculated dimensions on both elements.
-                svgElement.setAttribute('viewBox', `0 0 ${naturalWidth} ${naturalHeight}`)
                 svgElement.style.width = `${naturalWidth}px`
                 svgElement.style.height = `${naturalHeight}px`
 
@@ -167,6 +176,15 @@ class DiagramViewer {
                 this.contentElement.innerHTML = `<p class="has-text-danger p-4">Error loading SVG file: ${error.message}</p>`
             }
         }
+    }
+
+    /**
+     * Helper to calculate distance between two touch points for pinch-to-zoom.
+     */
+    getPinchDistance(touches) {
+        const dx = touches[0].clientX - touches[1].clientX
+        const dy = touches[0].clientY - touches[1].clientY
+        return Math.sqrt(dx * dx + dy * dy)
     }
 
     /**
@@ -241,30 +259,56 @@ class DiagramViewer {
             }
         })
 
-        // Bind touch start events for mobile pointer dragging.
+        // Bind touch start events for mobile pointer dragging and pinch zooming.
         this.viewportElement.addEventListener('touchstart', (event) => {
             if (event.touches.length === 1) {
+                this.isPinching = false
+                this.isDragging = true
+                this.startX = event.touches[0].clientX - this.panX
+                this.startY = event.touches[0].clientY - this.panY
+            } else if (event.touches.length === 2) {
+                // Switch from dragging to pinch zooming
+                this.isDragging = false
+                this.isPinching = true
+                this.initialPinchDistance = this.getPinchDistance(event.touches)
+                this.initialScaleBeforePinch = this.currentScale
+            }
+        }, { passive: true })
+
+        // Process active touch moves across mobile screens (dragging or pinch-to-zoom).
+        window.addEventListener('touchmove', (event) => {
+            if (event.touches.length === 2 && this.isPinching) {
+                event.preventDefault()
+                const currentDistance = this.getPinchDistance(event.touches)
+                if (this.initialPinchDistance > 0) {
+                    const scaleFactor = currentDistance / this.initialPinchDistance
+                    this.currentScale = Math.max(
+                        this.minScale,
+                        Math.min(this.maxScale, this.initialScaleBeforePinch * scaleFactor)
+                    )
+                    this.updateTransformMatrix()
+                }
+            } else if (this.isDragging && event.touches.length === 1) {
+                this.panX = event.touches[0].clientX - this.startX
+                this.panY = event.touches[0].clientY - this.startY
+
+                this.updateTransformMatrix()
+            }
+        }, { passive: false })
+
+        // Terminate touch tracking state when touch points detach.
+        window.addEventListener('touchend', (event) => {
+            if (event.touches.length < 2) {
+                this.isPinching = false
+            }
+            if (event.touches.length === 0) {
+                this.isDragging = false
+            } else if (event.touches.length === 1) {
+                // Fall back smoothly to single-finger drag if one finger is still down
                 this.isDragging = true
                 this.startX = event.touches[0].clientX - this.panX
                 this.startY = event.touches[0].clientY - this.panY
             }
-        }, { passive: true })
-
-        // Process active touch moves across mobile screens.
-        window.addEventListener('touchmove', (event) => {
-            if (!this.isDragging || event.touches.length !== 1) {
-                return
-            }
-
-            this.panX = event.touches[0].clientX - this.startX
-            this.panY = event.touches[0].clientY - this.startY
-
-            this.updateTransformMatrix()
-        }, { passive: true })
-
-        // Terminate touch tracking state when touch points detach.
-        window.addEventListener('touchend', () => {
-            this.isDragging = false
         })
 
         // Intercept mouse wheel events to perform incremental zooming centered on pointer position.
@@ -335,15 +379,16 @@ class DiagramViewer {
         const svgElement = this.contentElement.querySelector('svg')
 
         if (svgElement && this.viewportElement) {
-            const headerHeight = document.querySelector('.viewer-header')?.offsetHeight || 60
             const viewportWidth = this.viewportElement.clientWidth || window.innerWidth
-            const viewportHeight = (this.viewportElement.clientHeight || (window.innerHeight - headerHeight)) - 20
+            const viewportHeight = this.viewportElement.clientHeight || window.innerHeight
 
             let svgWidth = parseFloat(svgElement.style.width) || 800
             let svgHeight = parseFloat(svgElement.style.height) || 600
 
-            const scaleX = (viewportWidth * 0.90) / svgWidth
-            const scaleY = (viewportHeight * 0.90) / svgHeight
+            // 0.85 padding ratio for optimal zoomed-out breathing room by default
+            const paddingRatio = 0.85
+            const scaleX = (viewportWidth * paddingRatio) / svgWidth
+            const scaleY = (viewportHeight * paddingRatio) / svgHeight
 
             this.currentScale = Math.min(scaleX, scaleY)
             this.currentScale = Math.max(this.minScale, Math.min(this.maxScale, this.currentScale))
