@@ -40,11 +40,12 @@
         <!-- Custom JS -->
         <script>
             // Dynamically set the back button href to point back to index.html with the correct target
-            const urlParams = new URLSearchParams(window.location.search);
-            const target = urlParams.get('target') || urlParams.get('from') || 'diagrams';
-            const backBtn = document.getElementById('back-btn');
+            const urlParams = new URLSearchParams(window.location.search)
+            const target = urlParams.get('target') || urlParams.get('from') || 'diagrams'
+            const backBtn = document.getElementById('back-btn')
+
             if (backBtn) {
-                backBtn.href = `index.html?target=${target}`;
+                backBtn.href = `index.html?target=${target}`
             }
         </script>
         <script src="viewer.js"></script>

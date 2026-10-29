@@ -70,13 +70,48 @@ class DiagramViewer {
                 throw new Error(`HTTP error! status: ${response.status}`)
             }
             
-            const svgText = await response.text()
+            let svgText = await response.text()
+            
+            svgText = svgText.trim()
 
             this.contentElement.innerHTML = svgText
 
             const svgElement = this.contentElement.querySelector('svg')
 
             if (svgElement) {
+                // 1. Inject global SVG rules to guarantee text visibility and overflow padding.
+                const styleElement = document.createElementNS("http://www.w3.org/2000/svg", "style")
+
+                styleElement.textContent = `
+                    svg { overflow: visible !important; }
+                    g.node foreignObject { 
+                        overflow: visible !important; 
+                    }
+                    g.node foreignObject > div { 
+                        white-space: normal !important; 
+                        word-break: break-word !important; 
+                        box-sizing: border-box !important;
+                        overflow: visible !important;
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        height: 100% !important;
+                        width: 100% !important;
+                        color: #ffffff !important;
+                    }
+                    g.node span.nodeLabel, g.node span.nodeLabel p, g.node p, g.node label { 
+                        color: #ffffff !important;
+                        fill: #ffffff !important;
+                        font-family: system-ui, -apple-system, sans-serif !important; 
+                        font-size: 13px !important;
+                        line-height: 1.4 !important;
+                        margin: 0 !important;
+                        text-align: center !important;
+                    }
+                `
+                svgElement.prepend(styleElement)
+
+                // Remove solid background rectangles obstructing full-canvas rendering.
                 const bgElements = svgElement.querySelectorAll('rect.background, rect[width="100%"][height="100%"]')
 
                 bgElements.forEach((rectangle) => rectangle.remove())
@@ -85,65 +120,43 @@ class DiagramViewer {
                 svgElement.style.shapeRendering = 'geometricPrecision'
                 svgElement.style.textRendering = 'geometricPrecision'
                 svgElement.style.imageRendering = 'optimizeQuality'
-
-                svgElement.style.maxWidth = 'none'
-                svgElement.style.maxHeight = 'none'
+                svgElement.style.overflow = 'visible'
 
                 svgElement.removeAttribute('width')
                 svgElement.removeAttribute('height')
-
                 svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet')
 
-                const textElements = svgElement.querySelectorAll('text')
-                textElements.forEach((textNode) => {
-                    textNode.style.textAnchor = 'middle'
-                    textNode.style.dominantBaseline = 'middle'
-                })
-
-                let naturalWidth = 800
-                let naturalHeight = 600
-
+                // 2. Safely expand viewBox using the native SVG bounding box.
                 try {
                     const bbox = svgElement.getBBox()
-
+                    
                     if (bbox && bbox.width > 0 && bbox.height > 0) {
-                        const padding = 10
-
-                        naturalWidth = Math.ceil(bbox.width + padding * 2)
-                        naturalHeight = Math.ceil(bbox.height + padding * 2)
+                        const padding = Math.max(60, Math.max(bbox.width, bbox.height) * 0.08)
+                        const naturalWidth = Math.ceil(bbox.width + padding * 2)
+                        const naturalHeight = Math.ceil(bbox.height + padding * 2)
 
                         svgElement.setAttribute(
                             'viewBox',
                             `${bbox.x - padding} ${bbox.y - padding} ${naturalWidth} ${naturalHeight}`
                         )
+
+                        const HD_DENSITY_FACTOR = 2
+                        const renderWidth = naturalWidth * HD_DENSITY_FACTOR
+                        const renderHeight = naturalHeight * HD_DENSITY_FACTOR
+
+                        svgElement.style.width = `${renderWidth}px`
+                        svgElement.style.height = `${renderHeight}px`
+                        this.contentElement.style.width = `${renderWidth}px`
+                        this.contentElement.style.height = `${renderHeight}px`
                     }
                 } catch (error) {
-                    const viewBox = svgElement.getAttribute('viewBox')
-
-                    if (viewBox) {
-                        const parts = viewBox.split(/[\s,]+/).map(Number)
-
-                        if (parts.length === 4 && parts[2] > 0 && parts[3] > 0) {
-                            naturalWidth = parts[2]
-                            naturalHeight = parts[3]
-                        }
-                    }
+                    console.warn("Could not calculate SVG bounding box:", error)
                 }
 
-                const HD_DENSITY_FACTOR = 2
-                const renderWidth = naturalWidth * HD_DENSITY_FACTOR
-                const renderHeight = naturalHeight * HD_DENSITY_FACTOR
-
-                svgElement.style.width = `${renderWidth}px`
-                svgElement.style.height = `${renderHeight}px`
-
-                this.contentElement.style.width = `${renderWidth}px`
-                this.contentElement.style.height = `${renderHeight}px`
+                requestAnimationFrame(() => {
+                    this.resetZoomAndPan()
+                })
             }
-
-            setTimeout(() => {
-                this.resetZoomAndPan()
-            }, 50)
         } catch (error) {
             if (this.contentElement) {
                 this.contentElement.innerHTML = `<p class="has-text-danger p-4">Error loading SVG file: ${error.message}</p>`
@@ -157,6 +170,7 @@ class DiagramViewer {
     getPinchDistance(touches) {
         const deltaX = touches[0].clientX - touches[1].clientX
         const deltaY = touches[0].clientY - touches[1].clientY
+
         return Math.sqrt(deltaX * deltaX + deltaY * deltaY)
     }
 
@@ -183,24 +197,35 @@ class DiagramViewer {
         }
 
         this.viewportElement.addEventListener('mousedown', (event) => {
-            if (event.button !== 0) return
+            if (event.button !== 0) {
+                return
+            }
+
             this.isDragging = true
+
             this.startX = event.clientX - this.panX
             this.startY = event.clientY - this.panY
+
             this.viewportElement.style.cursor = 'grabbing'
         })
 
         window.addEventListener('mousemove', (event) => {
-            if (!this.isDragging) return
+            if (!this.isDragging) {
+                return
+            }
+
             event.preventDefault()
+
             this.panX = event.clientX - this.startX
             this.panY = event.clientY - this.startY
+
             this.updateTransformMatrix()
         })
 
         window.addEventListener('mouseup', () => {
             if (this.isDragging) {
                 this.isDragging = false
+
                 if (this.viewportElement) {
                     this.viewportElement.style.cursor = 'grab'
                 }
@@ -319,7 +344,9 @@ class DiagramViewer {
         this.panX = 0
         this.panY = 0
 
-        if (!this.contentElement) return
+        if (!this.contentElement) {
+            return
+        }
 
         const svgElement = this.contentElement.querySelector('svg')
 
