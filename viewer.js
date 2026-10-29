@@ -237,7 +237,7 @@ class DiagramViewer {
 
                 // Define global CSS rules to ensure node labels render cleanly.
                 styleElement.textContent = `
-                    svg { overflow: visible !important; }
+                    svg { overflow: visible !important; display: block; margin: auto; }
                     g.node foreignObject { 
                         overflow: visible !important; 
                     }
@@ -299,18 +299,12 @@ class DiagramViewer {
                             `${bbox.x - padding} ${bbox.y - padding} ${naturalWidth} ${naturalHeight}`
                         )
 
-                        // Scale pixel dimensions for high-density display rendering.
-                        const HD_DENSITY_FACTOR = 2
-                        const renderWidth = naturalWidth * HD_DENSITY_FACTOR
-                        const renderHeight = naturalHeight * HD_DENSITY_FACTOR
-
-                        // Apply high-density render dimensions to SVG element styles.
-                        svgElement.style.width = `${renderWidth}px`
-                        svgElement.style.height = `${renderHeight}px`
+                        // Set content dimensions to natural width and height.
+                        this.contentElement.style.width = `${naturalWidth}px`
+                        this.contentElement.style.height = `${naturalHeight}px`
                         
-                        // Align container dimensions with computed high-density SVG sizing.
-                        this.contentElement.style.width = `${renderWidth}px`
-                        this.contentElement.style.height = `${renderHeight}px`
+                        svgElement.style.width = '100%'
+                        svgElement.style.height = '100%'
                     }
                 } catch (error) {
                     // Log warning if native bounding box calculation fails.
@@ -563,47 +557,39 @@ class DiagramViewer {
     }
 
     /**
-     * Resets pan coordinates and computes the optimal scale to fit the SVG within the viewport.
+     * Resets pan coordinates and computes the optimal scale to fit the SVG centered within the viewport.
      */
     resetZoomAndPan() {
         // Reset translation offset values back to origin coordinates.
         this.panX = 0
         this.panY = 0
 
-        // Abort auto-scaling logic if content container is absent.
         if (!this.contentElement) {
             return
         }
 
-        // Query embedded SVG element inside container node.
         const svgElement = this.contentElement.querySelector('svg')
 
-        // Calculate responsive target scale to fit diagram within viewport boundaries.
         if (svgElement && this.viewportElement) {
-            // Query viewport dimensions or default to window window sizes.
             const viewportWidth = this.viewportElement.clientWidth || window.innerWidth
             const viewportHeight = this.viewportElement.clientHeight || window.innerHeight
 
-            // Read parsed SVG element style dimensions.
-            let svgWidth = parseFloat(svgElement.style.width) || 800
-            let svgHeight = parseFloat(svgElement.style.height) || 600
+            let svgWidth = parseFloat(this.contentElement.style.width) || 800
+            let svgHeight = parseFloat(this.contentElement.style.height) || 600
 
-            // Compute ideal scale factor with padding safety margin ratio.
-            const paddingRatio = 0.85
+            // Padding ratio to ensure proper spacing on viewport boundaries.
+            const paddingRatio = 0.95
             const scaleX = (viewportWidth * paddingRatio) / svgWidth
             const scaleY = (viewportHeight * paddingRatio) / svgHeight
 
-            // Select minimum scale ratio between horizontal and vertical axes.
-            this.currentScale = Math.min(scaleX, scaleY)
-            
-            // Enforce scaling boundaries on calculated best-fit zoom level.
-            this.currentScale = Math.max(this.minScale, Math.min(this.maxScale, this.currentScale))
+            // Pick scale factor to fit within both dimensions.
+            let computedScale = Math.min(scaleX, scaleY)
+
+            this.currentScale = Math.max(this.minScale, Math.min(this.maxScale, computedScale))
         } else {
-            // Default scale factor to 1 if bounding elements are missing.
             this.currentScale = 1
         }
 
-        // Apply reset transformation matrix to content element.
         this.updateTransformMatrix()
     }
 
@@ -611,9 +597,10 @@ class DiagramViewer {
      * Applies the current pan translations and scale factor to the CSS transform matrix of the content container.
      */
     updateTransformMatrix() {
-        // Render current translation offsets and scale factor as CSS transform rule.
+        // Render current translation offsets and scale factor as CSS transform rule centered relative to the viewport.
         if (this.contentElement) {
             this.contentElement.style.transform = `translate(calc(-50% + ${this.panX}px), calc(-50% + ${this.panY}px)) scale(${this.currentScale})`
+            this.contentElement.style.transformOrigin = 'center center'
         }
     }
 }
