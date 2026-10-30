@@ -690,6 +690,21 @@ pre code.hljs {
     list-style: circle !important;
 }
 
+.networking-example-box ul,
+.networking-example-box li,
+.networking-example-box strong {
+    color: var(--text-heading) !important;
+}
+
+.networking-example-box code {
+    color: var(--system-blue) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.networking-inner-list li {
+    color: var(--text-body) !important;
+}
+
 .status-box-header {
     border-bottom: 1px solid var(--border-color);
 }
@@ -1143,7 +1158,6 @@ pre code.hljs {
         color: var(--bg-xbox-green-light) !important;
     }
 
-    /* Fixed Light Mode Box Borders & Shadows */
     .box {
         background-color: var(--card-bg) !important;
         border: 1px solid var(--border-color) !important;
@@ -1429,6 +1443,41 @@ pre code.hljs {
         background-color: #f8fafc !important;
         border-color: #cbd5e3 !important;
         border-left: 3px solid #8e44ad !important;
+    }
+
+    .networking-example-box ul,
+    .networking-example-box li,
+    .networking-example-box strong {
+        color: #1e293b !important;
+    }
+
+    .networking-example-box code {
+        color: #0284c7 !important;
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .networking-inner-list li {
+        color: #334155 !important;
+    }
+
+    .networking-example-box .has-text-success {
+        color: #15803d !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-primary {
+        color: #047857 !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-info {
+        color: #0284c7 !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-warning {
+        color: #b45309 !important;
+        font-weight: 600;
     }
 
     .networking-btn,

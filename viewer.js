@@ -233,7 +233,7 @@ class DiagramViewer {
 
             if (svgElement) {
                 // 1. Inject layout rules without overriding per-node text colors.
-                const styleElement = document.createElementNS("http://www.w3.org/2000/svg", "style")                
+                const styleElement = document.createElementNS("http://www.w3.org/2000/svg", "style")        
 
                 // Prepend injected style rules into the top of the SVG element.
                 svgElement.prepend(styleElement)

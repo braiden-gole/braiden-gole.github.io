@@ -227,6 +227,15 @@ g.cluster rect {
     fill: none !important;
 }
 
+g.cluster text, 
+.cluster text, 
+.cluster-label span, 
+.cluster-label, 
+g.cluster span {
+    fill: var(--text-color) !important;
+    color: var(--text-color) !important;
+}
+
 g.edgePath path.path, path.let-path, g.edgePaths path {
     stroke: var(--text-color) !important;
     fill: none !important;
@@ -277,7 +286,6 @@ g.node label {
 
 .edgeLabel foreignObject {
     overflow: visible !important;
-    transform: translate(-50%, -50%) !important;
 }
 
 .edgeLabel foreignObject > div {
@@ -288,22 +296,14 @@ g.node label {
     width: 100% !important;
 }
 
-.edgeLabel, 
-.edgeLabel foreignObject, 
-.edgeLabel foreignObject > div, 
 .edgeLabel span,
 .edgeLabel div, 
 .edgeLabel p, 
 .edgeLabel label,
 span.nodeLabel, 
-.cluster-label span, 
-span {
+.cluster-label span {
     color: var(--label-text) !important;
     text-align: center !important;
-    justify-content: center !important;
-    align-items: center !important;
-    display: flex !important;
-    margin: auto !important;
 }
 
 .controls-toolbar {
