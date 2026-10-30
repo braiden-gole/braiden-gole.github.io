@@ -1,10 +1,10 @@
-html {
-    --bg-main: #f8fafc;
+:root, html {
+    --bg-main: #ffffff;
     --bg-gradient-start: #f1f5f9;
-    --bg-gradient-end: #f8fafc;
-    --header-bg: rgba(248, 250, 252, 0.85);
+    --bg-gradient-end: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.85);
     --header-border: #e2e8f0;
-    --text-color: #0f172a;
+    --text-color: #000000;
     --box-bg: transparent;
     --box-border: transparent;
     --box-shadow: none;
@@ -12,16 +12,22 @@ html {
     --toolbar-border: rgba(0, 0, 0, 0.1);
     --btn-bg: #e2e8f0;
     --btn-hover: #cbd5e1;
+    --label-bg: var(--bg-main);
+    --label-text: var(--text-color);
+    --back-btn-bg: transparent;
+    --back-btn-border: #ffffff;
+    --back-btn-color: #000000;
+    --back-btn-hover: rgba(0, 0, 0, 0.05);
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        --bg-main: #121212;
+    :root, html {
+        --bg-main: #000000;
         --bg-gradient-start: #1e1e1e;
-        --bg-gradient-end: #121212;
-        --header-bg: rgba(18, 18, 18, 0.85);
+        --bg-gradient-end: #000000;
+        --header-bg: rgba(0, 0, 0, 0.85);
         --header-border: #2d2d2d;
-        --text-color: #e0e0e0;
+        --text-color: #ffffff;
         --box-bg: transparent;
         --box-border: transparent;
         --box-shadow: none;
@@ -29,16 +35,22 @@ html {
         --toolbar-border: rgba(255, 255, 255, 0.08);
         --btn-bg: #2a2a2a;
         --btn-hover: #383838;
+        --label-bg: transparent;
+        --label-text: #000000;
+        --back-btn-bg: transparent;
+        --back-btn-border: #ffffff;
+        --back-btn-color: #ffffff;
+        --back-btn-hover: rgba(255, 255, 255, 0.1);
     }
 }
 
 html.theme-light {
-    --bg-main: #f8fafc;
+    --bg-main: #ffffff;
     --bg-gradient-start: #f1f5f9;
-    --bg-gradient-end: #f8fafc;
-    --header-bg: rgba(248, 250, 252, 0.85);
+    --bg-gradient-end: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.85);
     --header-border: #e2e8f0;
-    --text-color: #0f172a;
+    --text-color: #000000;
     --box-bg: transparent;
     --box-border: transparent;
     --box-shadow: none;
@@ -46,15 +58,21 @@ html.theme-light {
     --toolbar-border: rgba(0, 0, 0, 0.1);
     --btn-bg: #e2e8f0;
     --btn-hover: #cbd5e1;
+    --label-bg: var(--bg-main);
+    --label-text: var(--text-color);
+    --back-btn-bg: transparent;
+    --back-btn-border: #ffffff;
+    --back-btn-color: #000000;
+    --back-btn-hover: rgba(0, 0, 0, 0.05);
 }
 
 html.theme-dark {
-    --bg-main: #121212;
+    --bg-main: #000000;
     --bg-gradient-start: #1e1e1e;
-    --bg-gradient-end: #121212;
-    --header-bg: rgba(18, 18, 18, 0.85);
+    --bg-gradient-end: #000000;
+    --header-bg: rgba(0, 0, 0, 0.85);
     --header-border: #2d2d2d;
-    --text-color: #e0e0e0;
+    --text-color: #ffffff;
     --box-bg: transparent;
     --box-border: transparent;
     --box-shadow: none;
@@ -62,6 +80,12 @@ html.theme-dark {
     --toolbar-border: rgba(255, 255, 255, 0.08);
     --btn-bg: #2a2a2a;
     --btn-hover: #383838;
+    --label-bg: transparent;
+    --label-text: #000000;
+    --back-btn-bg: transparent;
+    --back-btn-border: #ffffff;
+    --back-btn-color: #ffffff;
+    --back-btn-hover: rgba(255, 255, 255, 0.1);
 }
 
 html, body {
@@ -118,6 +142,29 @@ html, body {
     background-color: var(--btn-hover);
 }
 
+.viewer-header .button#back-btn,
+.viewer-header a.button,
+.viewer-header button.back,
+.viewer-header .back-button {
+    background-color: var(--back-btn-bg) !important;
+    border: 1px solid var(--back-btn-border) !important;
+    color: var(--back-btn-color) !important;
+}
+
+.viewer-header .button#back-btn *,
+.viewer-header a.button *,
+.viewer-header button.back *,
+.viewer-header .back-button * {
+    color: var(--back-btn-color) !important;
+}
+
+.viewer-header .button#back-btn:hover,
+.viewer-header a.button:hover,
+.viewer-header button.back:hover,
+.viewer-header .back-button:hover {
+    background-color: var(--back-btn-hover) !important;
+}
+
 .canvas-container,
 #svg-viewport {
     position: absolute;
@@ -164,6 +211,101 @@ html, body {
     height: auto;
 }
 
+svg { 
+    overflow: visible !important; 
+    display: block; 
+    margin: auto; 
+}
+
+g.node rect, g.node circle, g.node ellipse, g.node polygon, g.node path {
+    stroke: var(--text-color) !important;
+    fill: var(--bg-main) !important;
+}
+
+g.cluster rect {
+    stroke: var(--text-color) !important;
+    fill: none !important;
+}
+
+g.edgePath path.path, path.let-path, g.edgePaths path {
+    stroke: var(--text-color) !important;
+    fill: none !important;
+}
+
+marker path, marker polygon, #arrowhead path, #crosspath path {
+    fill: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+g.node foreignObject { 
+    overflow: visible !important; 
+}
+
+g.node foreignObject > div { 
+    white-space: normal !important; 
+    word-break: break-word !important; 
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+g.node span.nodeLabel, 
+g.node span.nodeLabel p, 
+g.node p, 
+g.node label { 
+    font-family: system-ui, -apple-system, sans-serif !important; 
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    color: var(--text-color) !important;
+}
+
+.edgeLabel {
+    transform-origin: center;
+}
+
+.edgeLabel rect {
+    fill: var(--label-bg) !important;
+    stroke: #ffffff !important;
+    stroke-width: 1px !important;
+}
+
+.edgeLabel foreignObject {
+    overflow: visible !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+.edgeLabel foreignObject > div {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.edgeLabel, 
+.edgeLabel foreignObject, 
+.edgeLabel foreignObject > div, 
+.edgeLabel span,
+.edgeLabel div, 
+.edgeLabel p, 
+.edgeLabel label,
+span.nodeLabel, 
+.cluster-label span, 
+span {
+    color: var(--label-text) !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    display: flex !important;
+    margin: auto !important;
+}
+
 .controls-toolbar {
     position: fixed;
     bottom: 2rem;
@@ -195,7 +337,6 @@ html, body {
 
 .controls-toolbar .button:hover {
     background-color: var(--btn-hover);
-    color: #e0e0e0;
 }
 
 @media screen and (max-width: 768px) {

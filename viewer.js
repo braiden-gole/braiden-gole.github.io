@@ -233,33 +233,8 @@ class DiagramViewer {
 
             if (svgElement) {
                 // 1. Inject layout rules without overriding per-node text colors.
-                const styleElement = document.createElementNS("http://www.w3.org/2000/svg", "style")
+                const styleElement = document.createElementNS("http://www.w3.org/2000/svg", "style")                
 
-                // Define global CSS rules to ensure node labels render cleanly.
-                styleElement.textContent = `
-                    svg { overflow: visible !important; display: block; margin: auto; }
-                    g.node foreignObject { 
-                        overflow: visible !important; 
-                    }
-                    g.node foreignObject > div { 
-                        white-space: normal !important; 
-                        word-break: break-word !important; 
-                        box-sizing: border-box !important;
-                        overflow: visible !important;
-                        display: flex !important;
-                        align-items: center !important;
-                        justify-content: center !important;
-                        height: 100% !important;
-                        width: 100% !important;
-                    }
-                    g.node span.nodeLabel, g.node span.nodeLabel p, g.node p, g.node label { 
-                        font-family: system-ui, -apple-system, sans-serif !important; 
-                        font-size: 13px !important;
-                        line-height: 1.4 !important;
-                        margin: 0 !important;
-                        text-align: center !important;
-                    }
-                `
                 // Prepend injected style rules into the top of the SVG element.
                 svgElement.prepend(styleElement)
 

@@ -260,6 +260,15 @@ hr {
     background-color: var(--card-bg);
 }
 
+.nav-dropdown-wrapper .dropdown-trigger button,
+.nav-dropdown-wrapper .dropdown-trigger button *,
+.nav-dropdown-wrapper .dropdown-menu,
+.nav-dropdown-wrapper .dropdown-content,
+.nav-dropdown-wrapper .dropdown-item,
+.nav-dropdown-wrapper .dropdown-item * {
+    color: #ffffff !important;
+}
+
 .manifest-log {
     background: var(--manifest-bg);
     border-radius: 4px;
@@ -1134,7 +1143,15 @@ pre code.hljs {
         color: var(--bg-xbox-green-light) !important;
     }
 
+    /* Fixed Light Mode Box Borders & Shadows */
+    .box {
+        background-color: var(--card-bg) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06) !important;
+    }
+
     .modern-tile {
+        border: 1px solid var(--border-color) !important;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
         background-image: none;
     }
