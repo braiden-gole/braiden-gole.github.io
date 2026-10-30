@@ -523,6 +523,22 @@ pre code.hljs {
     text-transform: uppercase;
 }
 
+/* Frameworks and Infrastructure buttons - Transparent background on dark mode */
+.sidebar-card .buttons .button.is-light {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-body) !important;
+}
+
+.sidebar-card .buttons .button.is-light:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: var(--xbox-green) !important;
+}
+
+.sidebar-card .buttons .button.is-light span.mono {
+    color: var(--text-heading) !important;
+}
+
 .lang-target-row {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -874,11 +890,11 @@ pre code.hljs {
 
 .text-shadow-danger,
 .color-danger {
-    color: #ff3860;
+    color: #ff3860 !important;
 }
 
 .text-shadow-danger {
-    text-shadow: 0 0 10px rgba(255, 56, 96, 0.4);
+    text-shadow: 0 0 10px rgba(255, 56, 96, 0.4) !important;
 }
 
 .text-shadow-yellow {
@@ -1045,6 +1061,14 @@ pre code.hljs {
 .security-anchor .security-callout {
     background-color: rgba(255, 153, 0, 0.04) !important;
     border-left: 3px solid #ff9900 !important;
+}
+
+.color-xbox {
+    color: var(--xbox-green) !important;
+}
+
+.text-shadow-xbox {
+    text-shadow: 0 0 10px rgba(16, 124, 16, 0.4) !important;
 }
 
 @keyframes pulse-xbox-green {
@@ -1231,15 +1255,53 @@ pre code.hljs {
         box-shadow: none !important;
     }
 
+    .core-stack,
+    .core-stack-tile,
+    .sidebar-card {
+        background-color: #ffffff !important;
+        background-image: none !important;
+        color: #1a202c !important;
+        border-color: var(--border-color) !important;
+    }
+
+    .core-stack h1, .core-stack h2, .core-stack h3, .core-stack h4,
+    .core-stack .title, .core-stack .subtitle, .core-stack p, .core-stack span,
+    .core-stack-tile h1, .core-stack-tile h2, .core-stack-tile h3, .core-stack-tile h4,
+    .core-stack-tile .title, .core-stack-tile .subtitle, .core-stack-tile p, .core-stack-tile span,
+    .sidebar-card h1, .sidebar-card h2, .sidebar-card h3, .sidebar-card h4,
+    .sidebar-card .title, .sidebar-card .subtitle, .sidebar-card p, .sidebar-card span {
+        color: #1a202c !important;
+    }
+
+    .sidebar-card .buttons .button.is-light {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e3 !important;
+        color: #334155 !important;
+    }
+
+    .sidebar-card .buttons .button.is-light:hover {
+        background: #f1f5f9 !important;
+        border-color: #0b5c0b !important;
+    }
+
+    .sidebar-card .buttons .button.is-light span.mono {
+        color: #1e293b !important;
+    }
+
     .unique-terminal-box {
-        background-color: var(--bg-deep-light) !important;
-        border-color: #2e384e !important;
+        background-color: #f1f5f9 !important;
+        border-color: #cbd5e3 !important;
+        color: #1e293b !important;
     }
 
     .terminal-header {
-        background: #dce3ed !important;
+        background: #ffffff !important;
         color: #24292e !important;
-        border-color: #cbd5e1 !important;
+        border: 1px solid #000000 !important;
+    }
+
+    .code-viewer-header-custom {
+        border-color: #000000 !important;
     }
 
     #repository-tree-container,
@@ -1247,9 +1309,9 @@ pre code.hljs {
     #golang-repository-tree-container,
     #under-the-hood-repository-tree-container,
     .code-box-mobile {
-        background: #dce3ed !important;
+        background: #ffffff !important;
         color: #1f2328 !important;
-        border-color: #cbd5e1 !important;
+        border: 1px solid #000000 !important;
     }
 
     #repository-tree-container a,
@@ -1288,7 +1350,7 @@ pre code.hljs {
 
     .code-box-mobile code,
     pre code.hljs {
-        background: #dce3ed !important;
+        background: #ffffff !important;
         color: #1f2328 !important;
     }
 
@@ -1532,5 +1594,21 @@ pre code.hljs {
 
     #resilient {
         color: var(--xbox-green) !important;
+    }
+
+    .color-xbox {
+        color: var(--bg-xbox-green-light) !important;
+    }
+
+    .text-shadow-xbox {
+        text-shadow: 0 0 10px rgba(11, 92, 11, 0.35) !important;
+    }
+
+    .color-danger {
+        color: #dc2626 !important;
+    }
+
+    .text-shadow-danger {
+        text-shadow: 0 0 8px rgba(220, 38, 38, 0.35) !important;
     }
 }
