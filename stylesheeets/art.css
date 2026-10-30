@@ -1,0 +1,35 @@
+.modern-tile.accent-cyber-art {
+    clip-path: var(--shape-cyber);
+    background: linear-gradient(135deg, #121620 0%, #0d1017 100%) !important;
+    border: 1px solid rgba(16, 124, 16, 0.45);
+}
+
+.modern-tile.accent-cyber-art::before {
+    background: linear-gradient(180deg, var(--xbox-green), var(--system-blue));
+}
+
+.art-img-cover {
+    object-fit: cover;
+}
+
+@media (prefers-color-scheme: light) {
+    .modern-tile.accent-cyber-art {
+        background: #ffffff !important;
+        border: 1px solid var(--border-color) !important;
+    }
+
+    .modern-tile.accent-cyber-art .title,
+    .modern-tile.accent-cyber-art h4 {
+        color: #1e293b !important;
+    }
+
+    .modern-tile.accent-cyber-art .box {
+        background-color: #ffffff !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .modern-tile.accent-cyber-art .has-text-weight-bold {
+        color: #1a202c !important;
+    }
+}

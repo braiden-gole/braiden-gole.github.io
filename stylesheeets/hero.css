@@ -1,0 +1,100 @@
+.hero-parent {
+    position: relative;
+    overflow: hidden;
+}
+
+.fan-background {
+    position: absolute;
+    bottom: -100px;
+    right: -100px;
+    width: 800px;
+    height: 800px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.fan-blade {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom right;
+    border-radius: 100% 0 0 0;
+    opacity: 0.15;
+}
+
+.blade-1 {
+    background-color: #0d380d;
+    transform: rotate(0deg);
+}
+
+.blade-2 {
+    background-color: #0b5c0b;
+    transform: rotate(25deg);
+}
+
+.blade-3 {
+    background-color: #107c10;
+    transform: rotate(50deg);
+}
+
+.relative-z {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-fix {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--xbox-green);
+}
+
+.profile-img-zoom {
+    box-shadow: 0 0 15px var(--xbox-green-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img-zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--xbox-green);
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    width: 14px;
+    height: 14px;
+    background-color: var(--xbox-green);
+    border: 2px solid var(--bg-light);
+    border-radius: 50%;
+    z-index: 3;
+    animation: pulse-xbox-green 2s infinite;
+}
+
+.status-box {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-body);
+    background-color: var(--card-bg);
+}
+
+.status-box-header {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.status-dot {
+    font-size: 0.6rem;
+    animation: pulse-brown 1.5s infinite;
+}
+
+.status-tag {
+    border: 1px solid var(--border-color);
+    font-size: 0.65rem;
+}
+
+.tag-xs {
+    font-size: 0.65rem;
+}

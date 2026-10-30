@@ -1,0 +1,224 @@
+:root {
+    --purple-primary: #9b59b6;
+}
+
+.networking-anchor {
+    scroll-margin-top: 2rem;
+}
+
+.networking-tile {
+    border-left: 4px solid var(--purple-primary) !important;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.15);
+    background: rgba(20, 12, 28, 0.95) !important;
+}
+
+.title.is-3.networking-title {
+    color: var(--purple-primary) !important;
+    text-shadow: 0 0 10px rgba(155, 89, 182, 0.4);
+}
+
+.networking-desc,
+.networking-text {
+    color: var(--text-body) !important;
+}
+
+.networking-accent-text,
+.networking-tile .has-text-primary {
+    color: var(--purple-primary) !important;
+}
+
+.networking-sub-box {
+    border-left: 3px solid var(--purple-primary) !important;
+}
+
+.networking-gap {
+    gap: 1rem;
+}
+
+.networking-btn {
+    background-color: var(--purple-primary) !important;
+    color: #ffffff !important;
+    border: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.networking-btn:hover {
+    background-color: #8e44ad !important;
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.5);
+}
+
+.networking-formula-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+}
+
+.networking-table {
+    background-color: #0d1117 !important;
+    color: #c9d1d9 !important;
+}
+
+.networking-table th {
+    color: var(--purple-primary) !important;
+    background-color: transparent !important;
+    border-color: var(--border-color) !important;
+}
+
+.networking-table td {
+    color: #c9d1d9 !important;
+    border-color: var(--border-color) !important;
+    background-color: transparent !important;
+}
+
+.networking-example-box {
+    border-left: 3px solid var(--purple-primary) !important;
+}
+
+.networking-list {
+    list-style: disc !important;
+    line-height: 1.6;
+}
+
+.networking-sublist {
+    line-height: 1.8;
+    list-style: disc !important;
+}
+
+.networking-inner-list {
+    list-style: circle !important;
+}
+
+.networking-example-box ul,
+.networking-example-box li,
+.networking-example-box strong {
+    color: var(--text-heading) !important;
+}
+
+.networking-example-box code {
+    color: #0284c7 !important;
+    background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.networking-inner-list li {
+    color: var(--text-body) !important;
+}
+
+/* Light Mode Overrides for Networking */
+@media (prefers-color-scheme: light) {
+    .networking-tile {
+        background: #ffffff !important;
+        border-left: 4px solid #8e44ad !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .title.is-3.networking-title {
+        color: #8e44ad !important;
+        text-shadow: none !important;
+    }
+
+    .networking-desc,
+    .networking-text {
+        color: #334155 !important;
+    }
+
+    .networking-accent-text,
+    .networking-tile .has-text-primary {
+        color: #8e44ad !important;
+    }
+
+    .networking-sub-box {
+        background-color: #f8fafc !important;
+        border-color: #cbd5e3 !important;
+        border-left: 3px solid #8e44ad !important;
+    }
+
+    .networking-sub-box.box.bg-deep,
+    .networking-example-box.box.bg-deep,
+    .box.bg-deep.networking-sub-box,
+    .box.bg-deep.networking-example-box {
+        background-color: #f8fafc !important;
+        border: 1px solid #cbd5e3 !important;
+    }
+
+    .networking-example-box ul,
+    .networking-example-box li,
+    .networking-example-box strong {
+        color: #1e293b !important;
+    }
+
+    .networking-example-box code {
+        color: #0284c7 !important;
+        background: rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .networking-inner-list li {
+        color: #334155 !important;
+    }
+
+    .networking-example-box .has-text-success {
+        color: #15803d !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-primary {
+        color: #8e44ad !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-info {
+        color: #0284c7 !important;
+        font-weight: 600;
+    }
+
+    .networking-example-box .has-text-warning {
+        color: #b45309 !important;
+        font-weight: 600;
+    }
+
+    .networking-btn {
+        background-color: #8e44ad !important;
+        border-color: #7d3c98 !important;
+        color: #ffffff !important;
+    }
+
+    .networking-btn:hover {
+        background-color: #7d3c98 !important;
+        border-color: #6c3483 !important;
+        color: #ffffff !important;
+    }
+
+    .networking-formula-item {
+        background: rgba(0, 0, 0, 0.03) !important;
+        color: #1e293b !important;
+    }
+
+    .networking-formula-item code {
+        color: #0284c7 !important;
+        background: transparent !important;
+    }
+
+    .networking-table {
+        background-color: #ffffff !important;
+        color: #1e293b !important;
+    }
+
+    .networking-table th {
+        color: #8e44ad !important;
+        background-color: #f1f5f9 !important;
+        border-color: #cbd5e3 !important;
+    }
+
+    .networking-table td {
+        color: #334155 !important;
+        border-color: #cbd5e3 !important;
+        background-color: transparent !important;
+    }
+
+    .networking-table code {
+        color: #0284c7 !important;
+        background: transparent !important;
+    }
+
+    .networking-example-box {
+        border-left: 3px solid #8e44ad !important;
+    }
+}

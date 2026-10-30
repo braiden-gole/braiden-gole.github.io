@@ -1,0 +1,143 @@
+/* Repositories & Code Viewers Styles */
+#repository-tree-container,
+#python-repository-tree-container,
+#golang-repository-tree-container,
+#under-the-hood-repository-tree-container {
+    overscroll-behavior: contain;
+}
+
+.code-viewer-wrapper {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.code-viewer-body {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.code-box-mobile {
+    min-height: 400px;
+    max-height: 750px;
+    height: 500px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    border: none;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: #0d1117 !important;
+}
+
+.code-box-mobile pre {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.code-box-mobile code {
+    display: block;
+    padding: 1rem;
+    background: transparent;
+    min-height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: pre;
+}
+
+.repo-tree-container-custom {
+    border: 1px solid var(--border-color);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.code-viewer-header-custom {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.tile-border-top-green {
+    border-top: 4px solid var(--xbox-green);
+}
+
+.repo-header-border-green {
+    border-bottom: 1px solid var(--xbox-green);
+}
+
+.tile-border-top-yellow {
+    border-top: 4px solid #ffc107;
+}
+
+.repo-header-border-yellow {
+    border-bottom: 1px solid #ffc107;
+}
+
+.tile-border-top-blue {
+    border-top: 4px solid var(--system-blue);
+}
+
+.repo-header-border-blue {
+    border-bottom: 1px solid var(--system-blue);
+}
+
+/* Light Mode Overrides for Repositories */
+@media (prefers-color-scheme: light) {
+    #repository-tree-container,
+    #python-repository-tree-container,
+    #golang-repository-tree-container,
+    #under-the-hood-repository-tree-container,
+    .code-box-mobile {
+        background: #ffffff !important;
+        color: #1f2328 !important;
+        border: 1px solid #000000 !important;
+    }
+
+    #repository-tree-container a,
+    #python-repository-tree-container a,
+    #golang-repository-tree-container a,
+    #under-the-hood-repository-tree-container a,
+    .tree-file-item,
+    .c-tree-file-item,
+    .python-tree-file-item,
+    .golang-tree-file-item,
+    .under-the-hood-tree-file-item {
+        color: #1f2328 !important;
+    }
+
+    #repository-tree-container span,
+    #python-repository-tree-container span,
+    #golang-repository-tree-container span,
+    #under-the-hood-repository-tree-container span {
+        color: #57606a !important;
+    }
+
+    .tree-file-item:hover,
+    a.tree-file-item:hover,
+    .c-tree-file-item:hover,
+    .python-tree-file-item:hover,
+    .golang-tree-file-item:hover,
+    .under-the-hood-tree-file-item:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+        color: #0969da !important;
+    }
+
+    .tree-file-item:hover *,
+    a.tree-file-item:hover * {
+        color: #0969da !important;
+    }
+
+    .code-box-mobile code,
+    pre code.hljs {
+        background: #ffffff !important;
+        color: #1f2328 !important;
+    }
+
+    .code-viewer-header-custom {
+        border-color: #000000 !important;
+    }
+}
