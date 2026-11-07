@@ -1,0 +1,410 @@
+strong, b, .fw-bold {
+    font-size: 1.0rem;
+}
+
+#github-book, #web-version {
+    background-color: #21262d !important;
+    color: #f0f6fc !important;
+    border: 1px solid #30363d !important;
+    border-radius: 6px !important;
+}
+
+#github-book:hover, #web-version:hover {
+    background-color: #30363d !important;
+    border-color: #8b949e !important;
+    color: #f0f6fc !important;
+}
+
+.conestoga-tile {
+    border-left: 4px solid #4a2e18 !important;
+    border-top: 4px solid #4a2e18 !important;
+    box-shadow: 0 0 35px rgba(255, 215, 0, 0.35);
+    background: linear-gradient(135deg, rgba(20, 16, 2, 0.98) 0%, rgba(35, 28, 4, 0.95) 100%) !important;
+}
+
+.conestoga-tile .title,
+.conestoga-tile .conestoga-core-title {
+    color: #ffffff !important;
+}
+
+.conestoga-tile .conestoga-desc,
+.conestoga-tile .conestoga-core-desc {
+    color: #b4bdc7 !important;
+    text-shadow: 0 0 2px rgba(255, 215, 0, 0.1);
+}
+
+.conestoga-diploma-box {
+    border: 2px solid #4a2e18 !important;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.25);
+}
+
+.conestoga-diploma-text {
+    color: #d4af37 !important;
+}
+
+.conestoga-logo-img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.diploma-img {
+    object-fit: contain;
+    background: #000;
+}
+
+.clean-list {
+    line-height: 1.6;
+    list-style: none;
+    margin-left: 0;
+}
+
+.clean-list-spacing {
+    line-height: 1.6;
+}
+
+.ml-list-spacing {
+    line-height: 1.8;
+}
+
+.def-desc-p {
+    font-size: 0.95rem;
+}
+
+.lang-row-cyan {
+    background: rgba(0, 210, 255, 0.05);
+    border-left: 3px solid #3298dc;
+    border-radius: 4px;
+}
+
+.lang-row-teal {
+    background: rgba(0, 209, 178, 0.05);
+    border-left: 3px solid #00d1b2;
+    border-radius: 4px;
+}
+
+.lang-row-purple {
+    background: rgba(155, 89, 182, 0.05);
+    border-left: 3px solid #9b59b6;
+    border-radius: 4px;
+}
+
+.lang-row-yellow {
+    background: rgba(255, 221, 87, 0.05);
+    border-left: 3px solid #ffdd57;
+    border-radius: 4px;
+}
+
+.lang-row-danger {
+    background: rgba(255, 56, 96, 0.05);
+    border-left: 3px solid #ff3860;
+    border-radius: 4px;
+}
+
+.lang-row-success {
+    background: rgba(72, 199, 116, 0.05);
+    border-left: 3px solid #48c774;
+    border-radius: 4px;
+}
+
+.lang-row-pink {
+    background: rgba(255, 121, 198, 0.05);
+    border-left: 3px solid #ff79c6;
+    border-radius: 4px;
+}
+
+.lang-icon-purple {
+    color: #9b59b6;
+}
+
+.lang-tag-purple {
+    background: rgba(155, 89, 182, 0.2);
+    color: #e0b0ff;
+    font-size: 0.65rem;
+}
+
+.lang-icon-pink {
+    color: #ff79c6;
+}
+
+.lang-tag-pink {
+    background: rgba(255, 121, 198, 0.2);
+    color: #ffb86c;
+    font-size: 0.65rem;
+}
+
+.unique-terminal-box {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 0.95rem;
+    border-left: 3px solid var(--primary);
+    background: rgba(0, 10, 20, 0.95);
+    box-shadow: 0 0 15px rgba(0, 209, 178, 0.15);
+}
+
+.terminal-pass-badge {
+    min-width: 65px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(72, 199, 116, 0.5);
+}
+
+.terminal-qued-badge {
+    min-width: 65px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(50, 152, 220, 0.5);
+}
+
+.terminal-exec-badge {
+    min-width: 65px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 221, 87, 0.5);
+}
+
+.terminal-trgt-badge {
+    min-width: 65px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 56, 96, 0.5);
+}
+
+.anim-warning {
+    animation: pulse-brown 1s infinite;
+}
+
+.text-shadow-teal {
+    text-shadow: 0 0 6px rgba(0, 209, 178, 0.3);
+}
+
+.text-shadow-blue {
+    text-shadow: 0 0 6px rgba(0, 210, 255, 0.3);
+}
+
+.text-shadow-danger,
+.color-danger {
+    color: #ff3860 !important;
+}
+
+.text-shadow-danger {
+    text-shadow: 0 0 10px rgba(255, 56, 96, 0.4) !important;
+}
+
+.text-shadow-yellow {
+    text-shadow: 0 0 6px rgba(255, 221, 87, 0.3);
+}
+
+.tile-border-left-primary {
+    border-left: 4px solid var(--primary);
+}
+
+.tile-shadow-primary {
+    box-shadow: 0 0 20px rgba(0, 209, 178, 0.12);
+}
+
+.tile-border-left-danger {
+    border-left: 4px solid #ff3860;
+}
+
+.tile-shadow-danger {
+    box-shadow: 0 0 20px rgba(255, 56, 96, 0.12);
+}
+
+.tile-bg-dark-purple {
+    background: rgba(15, 10, 15, 0.95);
+}
+
+.tile-border-left-blue,
+.tile-border-left-blue:focus,
+.tile-border-left-blue:active,
+.tile-border-left-blue:focus-within {
+    border-left: 4px solid #3298dc !important;
+}
+
+.tile-shadow-blue {
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.15);
+}
+
+.tile-full-width {
+    width: 100%;
+}
+
+.tile-border-left-orange,
+.tile-border-left-orange:focus,
+.tile-border-left-orange:active,
+.tile-border-left-orange:focus-within {
+    border-left: 4px solid #ff9800 !important;
+}
+
+.tile-shadow-orange {
+    box-shadow: 0 0 25px rgba(255, 152, 0, 0.15) !important;
+}
+
+.text-shadow-orange {
+    text-shadow: 0 0 6px rgba(255, 152, 0, 0.3) !important;
+}
+
+.ml-box-orange {
+    border: 1px solid rgba(255, 152, 0, 0.2);
+    border-left: 3px solid #ff9800 !important;
+    border-radius: 6px;
+}
+
+.def-box-green {
+    background: rgba(0, 209, 178, 0.04);
+    border-left: 3px solid var(--xbox-green);
+    border-radius: 4px;
+}
+
+.def-box-blue {
+    background: rgba(0, 210, 255, 0.04);
+    border-left: 3px solid #3298dc;
+    border-radius: 4px;
+}
+
+.def-box-yellow {
+    background: rgba(255, 221, 87, 0.04);
+    border-left: 3px solid #ffdd57;
+    border-radius: 4px;
+}
+
+.def-box-red {
+    background: rgba(255, 56, 96, 0.04);
+    border-left: 3px solid #ff3860;
+    border-radius: 4px;
+}
+
+.color-xbox {
+    color: var(--xbox-green) !important;
+}
+
+.text-shadow-xbox {
+    text-shadow: 0 0 10px rgba(16, 124, 16, 0.4) !important;
+}
+
+.has-text-orange {
+    color: #ff9800;
+}
+
+.has-text-purple {
+    color: #9b59b6;
+}
+
+.clean-tile-override {
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
+.title-xbox-custom {
+    color: var(--xbox-green) !important;
+    text-shadow: none !important;
+}
+
+.icon-xbox-custom {
+    color: var(--xbox-green) !important;
+}
+
+.text-xbox-green-bold {
+    color: var(--xbox-green) !important;
+    text-shadow: none !important;
+}
+
+.title-security-custom {
+    color: #ff3860 !important;
+    text-shadow: none !important;
+}
+
+.icon-security-custom {
+    color: #ff3860 !important;
+}
+
+.text-security-red-bold {
+    color: #ff3860 !important;
+    text-shadow: none !important;
+}
+
+.text-orange-custom {
+    color: #ff9800 !important;
+}
+
+.caution-box-custom {
+    border-left: 4px solid #f14668 !important;
+}
+
+.important-box-custom {
+    border-left: 4px solid #b877db !important;
+}
+
+.important-icon-custom {
+    color: #b877db !important;
+}
+
+.def-box-no-border {
+    border-left: none !important;
+}
+
+@media (prefers-color-scheme: light) {
+    .text-orange-custom {
+        color: #000000 !important;
+    }
+
+    .conestoga-tile {
+        border-left: 4px solid #8b5a2b !important;
+        border-top: 4px solid #8b5a2b !important;
+        box-shadow: 0 4px 20px rgba(139, 90, 43, 0.15);
+        background: linear-gradient(135deg, rgba(255, 253, 250, 1) 0%, rgba(247, 241, 235, 1) 100%) !important;
+    }
+
+    .conestoga-tile .title,
+    .conestoga-tile .conestoga-core-title {
+        color: #2c1810 !important;
+    }
+
+    .conestoga-tile .conestoga-desc,
+    .conestoga-tile .conestoga-core-desc {
+        color: #4a3525 !important;
+        text-shadow: none !important;
+    }
+
+    .conestoga-diploma-box {
+        border: 2px solid #8b5a2b !important;
+        box-shadow: 0 4px 12px rgba(139, 90, 43, 0.1) !important;
+        background-color: #ffffff !important;
+    }
+
+    .conestoga-diploma-text {
+        color: #5c3a21 !important;
+        font-weight: 700;
+    }
+
+    .diploma-img {
+        background: #ffffff !important;
+    }
+
+    #github-book, #web-version {
+        background-color: #f6f8fa !important;
+        color: #24292e !important;
+        border: 1px solid #d0d7de !important;
+        border-radius: 6px !important;
+    }
+
+    #github-book:hover, #web-version:hover {
+        background-color: #f3f4f6 !important;
+        border-color: black !important;
+        color: #24292e !important;
+    }
+}
+
+.buttons-responsive-align {
+    justify-content: center !important;
+}
+
+.icon-orange-custom {
+    color: #ff9800 !important;
+}
+
+.accent-danger {
+    border-left: 2px solid #dc3545 !important;
+}
+
+@media screen and (min-width: 768px) {
+    .buttons-responsive-align {
+        justify-content: flex-end !important;
+    }
+}

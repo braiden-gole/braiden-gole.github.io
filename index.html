@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="color-scheme" content="light dark">
+        <meta name="google-site-verification" content="gSmkvvqMiaJTaz9yyplx1rLh1oq0xYuaoLw1D1LukHU" />
+        <title>Braiden Gole | Computer Programmer</title>
+
+        <link rel="canonical" href="https://braiden-gole.github.io/" />
+        <link rel="me" href="https://github.com/braiden-gole">
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Braiden Gole",
+            "jobTitle": "Computer Programmer",
+            "url": "https://braiden-gole.github.io/",
+            "image": "https://braiden-gole.github.io/images/favicon_braiden.png",
+            "sameAs": [
+                "https://github.com/braiden-gole"
+            ]
+        }
+        </script>
+
+        <link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_braiden.png?v=4">
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_braiden.png?v=4">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_braiden.png?v=4">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_braiden.png?v=4">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Share+Tech+Mono&family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/styles/github-dark.min.css">
+
+        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="/stylesheeets/hero.css">
+        <link rel="stylesheet" href="/stylesheeets/nav.css">
+        <link rel="stylesheet" href="/stylesheeets/education_stack.css">
+        <link rel="stylesheet" href="/stylesheeets/repositories.css">
+        <link rel="stylesheet" href="/stylesheeets/art.css">
+        <link rel="stylesheet" href="/stylesheeets/diagrmas.css">
+        <link rel="stylesheet" href="/stylesheeets/networking.css">
+        <link rel="stylesheet" href="/stylesheeets/security.css">
+        <link rel="stylesheet" href="/stylesheeets/footer.css">
+    </head>
+    <body class="theme-dark" style="visibility: hidden;">
+        <div id="hero-component"></div>
+        <div id="nav-component"></div>
+
+        <section class="section">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <div id="education-stack-component"></div>
+                    <div id="repositories-component"></div>
+                    <div id="art-component"></div>
+                    <div id="diagrams-component"></div>
+                    <div id="networking-component"></div>
+                    <div id="security-component"></div>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer-component"></div>
+
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.12.0/highlight.min.js"></script>
+        <script type="module">
+            async function loadComponent(selector, file) {
+                try {
+                    const result = await fetch(file)
+
+                    if (!result.ok) {
+                        return
+                    }
+
+                    document.querySelector(selector).innerHTML = await result.text()
+                } catch (error) {
+                    console.error(`Error fetching ${file}:`, error)
+                }
+            }
+
+            async function loadAllComponents() {
+                await loadComponent('#hero-component', 'components/hero.html')
+                await loadComponent('#nav-component', 'components/nav.html')
+                await loadComponent('#education-stack-component', 'components/education_stack.html')
+                await loadComponent('#repositories-component', 'components/repositories.html')
+                await loadComponent('#art-component', 'components/art.html')
+                await loadComponent('#diagrams-component', 'components/diagrams.html')
+                await loadComponent('#networking-component', 'components/networking.html')
+                await loadComponent('#security-component', 'components/security.html')
+                await loadComponent('#footer-component', 'components/footer.html')
+
+                try {
+                    await import('./script.js')
+
+                    if (typeof window.initializePortfolio === 'function') {
+                        await window.initializePortfolio()
+                    }
+                } catch (error) {
+                    console.error('Error loading script.js:', error)
+                }
+
+                // Handle instant jump to target before revealing the page.
+                const urlParams = new URLSearchParams(window.location.search)
+                const targetId = urlParams.get('target')
+
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId)
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'auto', block: 'start' })
+                    }
+                }
+
+                // Reveal the fully rendered, correctly scrolled page all at once.
+                document.body.style.visibility = 'visible'
+            }
+
+            loadAllComponents();
+        </script>
+    </body>
+</html>
