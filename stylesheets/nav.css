@@ -1,0 +1,170 @@
+:root {
+    --xbox-green: #107c10;
+    --xbox-green-bright: #13a113;
+    --xbox-green-glow: rgba(16, 124, 16, 0.35);
+    --xbox-green-glow-intense: rgba(16, 124, 16, 0.6);
+    --xbox-green-alpha-light: rgba(16, 124, 16, 0.08);
+    --xbox-green-alpha-dark: rgba(16, 124, 16, 0.2);
+
+    --light-nav-bg: #ffffff;
+    --light-nav-border: #d0d7de;
+    --light-chip-bg: #f6f8fa;
+    --light-chip-border: #e1e4e8;
+    --light-shadow-bar: 0 0 15px rgba(16, 124, 16, 0.15), 0 2px 8px rgba(0, 0, 0, 0.05);
+
+    --dark-nav-bg: #161b22;
+    --dark-nav-border: #30363d;
+    --dark-chip-bg: #21262d;
+    --dark-chip-border: #363c44;
+    --dark-shadow-bar: 0 0 20px rgba(16, 124, 16, 0.25), 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+nav[aria-label="Quick Navigation"],
+nav[aria-label="Quick Navigation"] .columns,
+nav[aria-label="Quick Navigation"] .column {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.xbox-nav-bar {
+    border-radius: 20px;
+    gap: 0.5rem;
+    overflow-x: scroll !important;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px !important;
+    margin-top: -1.5rem !important;
+    margin-bottom: -2.5rem !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--xbox-green) transparent;
+}
+
+.xbox-nav-bar::-webkit-scrollbar {
+    display: block !important;
+    height: 5px;
+}
+
+.xbox-nav-bar::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+    margin: 0 16px;
+}
+
+.xbox-nav-bar::-webkit-scrollbar-thumb {
+    background-color: var(--xbox-green);
+    border-radius: 10px;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.xbox-nav-bar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--xbox-green-bright);
+    box-shadow: 0 0 8px var(--xbox-green-glow-intense);
+}
+
+.xbox-nav-chip {
+    border-radius: 12px;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    min-width: 90px;
+}
+
+.xbox-nav-chip .icon {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+.xbox-nav-chip .chip-label {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.xbox-nav-chip .icon,
+.xbox-nav-chip span {
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.xbox-nav-chip:hover {
+    transform: translateY(-2px);
+}
+
+.xbox-nav-chip:active {
+    transform: translateY(0) scale(0.96);
+}
+
+@media screen and (min-width: 769px) {
+    .xbox-nav-bar {
+        justify-content: center;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .xbox-nav-bar {
+        background-color: var(--light-nav-bg) !important;
+        border: 1.5px solid rgba(16, 124, 16, 0.25) !important;
+        box-shadow: var(--light-shadow-bar);
+    }
+
+    .xbox-nav-chip {
+        background-color: var(--light-chip-bg) !important;
+        border: 1px solid var(--light-chip-border) !important;
+        color: var(--xbox-green) !important;
+    }
+
+    .xbox-nav-chip * {
+        color: var(--xbox-green) !important;
+    }
+
+    .xbox-nav-chip:hover {
+        background-color: #ffffff !important;
+        border-color: var(--xbox-green) !important;
+        box-shadow: 0 0 12px var(--xbox-green-glow);
+    }
+
+    .xbox-nav-chip:hover .icon,
+    .xbox-nav-chip:hover span {
+        text-shadow: 0 0 8px rgba(16, 124, 16, 0.35);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .xbox-nav-bar {
+        background-color: var(--dark-nav-bg) !important;
+        border: 1.5px solid var(--xbox-green) !important;
+        box-shadow: var(--dark-shadow-bar);
+    }
+
+    .xbox-nav-chip {
+        background-color: var(--dark-chip-bg) !important;
+        border: 1px solid var(--dark-chip-border) !important;
+        color: var(--xbox-green-bright) !important;
+    }
+
+    .xbox-nav-chip * {
+        color: var(--xbox-green-bright) !important;
+    }
+
+    .xbox-nav-chip:hover {
+        background-color: var(--xbox-green-alpha-dark) !important;
+        border-color: var(--xbox-green-bright) !important;
+        box-shadow: 0 0 16px var(--xbox-green-glow-intense);
+    }
+
+    .xbox-nav-chip:hover .icon,
+    .xbox-nav-chip:hover span {
+        text-shadow: 0 0 10px rgba(19, 161, 19, 0.6);
+    }
+}
