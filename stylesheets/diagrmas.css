@@ -1,0 +1,13 @@
+.greenhouse-p {
+    line-height: 1.7;
+}
+
+@media (prefers-color-scheme: light) {
+    #diagrams {
+        color: #15803d !important;
+    }
+
+    #diagrams + span {
+        color: #15803d !important;
+    }
+}
