@@ -1,0 +1,118 @@
+.modern-tile.accent-cyber-art {
+    clip-path: var(--shape-cyber);
+    background: linear-gradient(135deg, #121620 0%, #0d1017 100%) !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.art-img-cover {
+    object-fit: cover;
+}
+
+.art-img-desktop-fit {
+    object-fit: contain;
+}
+
+.mobile-rotate-hint {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .modern-tile.accent-cyber-art {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        border-radius: 0 !important;
+    }
+
+    .modern-tile.accent-cyber-art > div {
+        padding-left: 0.25rem !important;
+        padding-right: 0.25rem !important;
+    }
+
+    .modern-tile.accent-cyber-art .columns {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .modern-tile.accent-cyber-art .column {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        min-width: 0;
+    }
+
+    .modern-tile.accent-cyber-art .box {
+        padding: 0.25rem !important;
+        border-radius: 0 !important;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .modern-tile.accent-cyber-art figure.image {
+        position: relative !important;
+        width: 100% !important;
+        overflow: hidden;
+    }
+
+    .modern-tile.accent-cyber-art figure.image.is-16by9 {
+        padding-top: 56.25% !important;
+        min-height: 0;
+        max-height: none;
+    }
+
+    .modern-tile.accent-cyber-art figure.image.is-9by16 {
+        padding-top: 135% !important;
+        max-height: 75vh;
+    }
+
+    .modern-tile.accent-cyber-art figure.image img {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+        transform: none !important;
+    }
+
+    .modern-tile.accent-cyber-art figure.image.is-16by9 img {
+        object-fit: contain !important;
+    }
+}
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    .mobile-rotate-hint {
+        display: block;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .modern-tile.accent-cyber-art {
+        background: #ffffff !important;
+        border: none !important;
+    }
+
+    .modern-tile.accent-cyber-art .title,
+    .modern-tile.accent-cyber-art h4 {
+        color: #1e293b !important;
+    }
+
+    .modern-tile.accent-cyber-art .box {
+        background-color: #ffffff !important;
+        border: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    .modern-tile.accent-cyber-art .has-text-weight-bold {
+        color: #1a202c !important;
+    }
+}

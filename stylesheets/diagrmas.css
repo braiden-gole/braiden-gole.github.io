@@ -1,0 +1,46 @@
+.greenhouse-p {
+    line-height: 1.7;
+}
+
+@media screen and (max-width: 768px) {
+    .modern-tile.accent-primary {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        border-radius: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .modern-tile.accent-primary .columns {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .modern-tile.accent-primary .column {
+        flex: 0 0 100% !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        min-width: 0;
+    }
+
+    .modern-tile.accent-primary .box {
+        border-radius: 0 !important;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    #diagrams {
+        color: #15803d !important;
+    }
+
+    #diagrams + span {
+        color: #15803d !important;
+    }
+}
